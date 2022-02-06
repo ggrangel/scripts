@@ -21,7 +21,7 @@ PACMAN_PACKAGES=(
 	gnome-clocks
 	highlight # ccat alias
 	htop
-	i3lock
+	insync
 	kitty
 	lxsession
 	ncdu # sort and list disk usage by size
@@ -42,6 +42,7 @@ PACMAN_PACKAGES=(
 	shellcheck
 	shfmt
 	slack-desktop
+	slock
 	sxhkd
 	sxiv
 	telegram-desktop
@@ -67,7 +68,6 @@ AUR_PACKAGES=(
 	devour # window swallower
 	dtrx   # extract compressed files
 	hollywood
-	insync
 	nvim-packer-git
 	sc-im
 	stylua
