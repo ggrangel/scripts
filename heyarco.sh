@@ -41,6 +41,7 @@ PACMAN_PACKAGES=(
 	scrot
 	shellcheck
 	shfmt
+	slack-desktop
 	sxhkd
 	sxiv
 	telegram-desktop
