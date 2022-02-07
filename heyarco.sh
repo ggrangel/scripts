@@ -11,6 +11,7 @@ PACMAN_PACKAGES=(
 	base-devel
 	brave-bin
 	cmatrix
+	# codespell
 	dmenu
 	etcher-bin
 	feh # set wallpaper
@@ -76,7 +77,6 @@ AUR_PACKAGES=(
 
 PIP_PACKAGES=(
 	# Linters
-	codespell
 	flake8     # general
 	bandit     # security flaws
 	mypy       # typehints
@@ -145,14 +145,6 @@ install_pyenv() {
 
 	## install pyenv
 	curl https://pyenv.run | bash
-
-	################## configure the environment:
-
-	# FUTURE GUSTAVO: decided not to automatically configure the environment
-	# given the sensitive files we have to work with (.base_profile and .bashrc)
-
-	# SEE: ~/.pyenv/readme.md file for instructions (2. Configure your shell's environment for Pyenv)
-
 }
 
 setup_git() {
@@ -178,12 +170,6 @@ upgrade_and_clean_system() {
 	sudo pacman -Scc --noconfirm
 }
 
-setup_vim() {
-	# Install vim-plug
-	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-}
-
 change_shell() {
 	chsh -s /bin/zsh
 }
@@ -196,7 +182,6 @@ install_pacman_packages
 install_AUR_packages
 install_pip_packages
 install_pyenv
-setup_vim
 setup_git
 change_shell
 upgrade_and_clean_system
