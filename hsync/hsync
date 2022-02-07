@@ -1,0 +1,21 @@
+#!/bin/bash
+
+options="-a"
+
+if [[ ! -z "$2" ]]; then
+	if [[ "$2" = "v" ]]; then
+		options=$options"v"
+	else
+		echo "invalid 2nd option" && exit 1
+	fi
+fi
+
+if [[ "$1" = "in" ]]; then
+	rsync "$options" --delete --prune-empty-dirs --exclude-from="./excluded_files" "$HOME/" ./rangelgbr/
+
+elif [[ "$1" = "out" ]]; then
+	rsync "$options" --delete --prune-empty-dirs --exclude-from="./excluded_files" ./rangelgbr/ "$HOME/"
+
+else
+	echo "invalid 1st option!"
+fi
