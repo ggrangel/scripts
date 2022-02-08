@@ -66,6 +66,7 @@ PACMAN_PACKAGES=(
 
 AUR_PACKAGES=(
 	bashmount
+    colorpicker
 	devour # window swallower
 	dtrx   # extract compressed files
 	hollywood
