@@ -1,10 +1,5 @@
 #!/usr/bin/bash
 
-################################################################################################################
-# Future Gustavo: you will want to read this before making any modification in this script
-# https://stackoverflow.com/questions/18135451/what-is-the-difference-between-var-var-and-var-in-the-bash-shell
-###############################################################################################################
-
 # ========== ========== ========== ========== global variables
 
 PACMAN_PACKAGES=(
@@ -124,6 +119,18 @@ setup_git() {
 	git config --global user.name "Gustavo Rangel"
 }
 
+setup_repos() {
+    dotfilesTmpPath=$HOME/tmp/dotfiles
+
+    gh auth login
+    gh repo clone scripts "$HOME/scripts"
+
+    # TODO test this
+    gh repo clone dotfiles "$dotfilesTmpPath" 
+    cp "$dotfilesTmpPath/*" "$HOME/.config/"
+    rm -rf "$dotfilesTmpPath"
+}
+
 upgrade_and_clean_system() {
 	display_message "$INFO_MESSAGE" "UPGRADING AND CLEANING SYSTEM..."
 
@@ -145,5 +152,6 @@ install_AUR_packages
 install_pyenv
 install_pip_packages
 setup_git
+setup_repos
 change_shell
 upgrade_and_clean_system
