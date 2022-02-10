@@ -13,6 +13,7 @@ PACMAN_PACKAGES=(
 	figlet
 	fzf # used by zoxide
 	git
+    go  # for vim-hexokinase
 	gparted
 	highlight # ccat alias
 	htop
@@ -131,6 +132,11 @@ setup_repos() {
     rm -rf "$dotfilesTmpPath"
 }
 
+setup_vim() {
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+    nvim --headless +PackerSync +qa
+}
+
 upgrade_and_clean_system() {
 	display_message "$INFO_MESSAGE" "UPGRADING AND CLEANING SYSTEM..."
 
@@ -153,5 +159,6 @@ install_pyenv
 install_pip_packages
 setup_git
 setup_repos
+setup_vim
 change_shell
 upgrade_and_clean_system
