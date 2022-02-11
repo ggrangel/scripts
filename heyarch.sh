@@ -91,9 +91,8 @@ install_pacman_packages() {
 }
 
 install_paru() {
-    mkdir $HOME/apps && cd $HOME/apps
-    git clone https://aur.archlinux.org/paru.git
-    cd paru
+    git clone https://aur.archlinux.org/paru.git $HOME/apps/paru
+    cd $HOME/apps/paru
     makepkg -si
 }
 
@@ -143,8 +142,6 @@ setup_vim() {
 }
 
 upgrade_and_clean_system() {
-	display_message "$INFO_MESSAGE" "UPGRADING AND CLEANING SYSTEM..."
-
 	sudo pacman -Syu --noconfirm
 	
 	sudo pacman -Scc --noconfirm  # clean cache
