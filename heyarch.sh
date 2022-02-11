@@ -9,7 +9,7 @@ PACMAN_PACKAGES=(
 	# codespell
 	dmenu
 	etcher-bin
-	feh # set wallpaper
+	feh 
 	figlet
 	fzf # used by zoxide
 	git
@@ -26,6 +26,7 @@ PACMAN_PACKAGES=(
 	npm # required by LspInstall
 	numlockx
 	pass
+    pcmanfm  # sometimes it is useful 
 	picom
 	psutils
 	pulsemixer
@@ -42,7 +43,6 @@ PACMAN_PACKAGES=(
 	sxhkd
 	sxiv
 	telegram-desktop
-	# texlive-most
 	# time
 	tmux
 	udisks2
@@ -53,7 +53,7 @@ PACMAN_PACKAGES=(
 	xcape # change keymaps
 	xclip
 	zathura
-	zathura-pdf-poppler # pdf support to zathura
+	zathura-pdf-poppler 
 	zoxide
 	zsh
 	zsh-syntax-highlighting
@@ -62,7 +62,7 @@ PACMAN_PACKAGES=(
 AUR_PACKAGES=(
 	bashmount
 	colorpicker
-	devour # window swallower
+	devour 
 	dtrx   # extract compressed files
 	hollywood
 	nvim-packer-git
@@ -72,12 +72,12 @@ AUR_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-	# Linters
+	## Linters
 	# flake8     # general
 	# bandit     # security flaws
 	# mypy       # typehints
 	# pydocstyle # documentation
-	# Fixers
+	## Fixers
 	black # general
 	isort # imports
 )
@@ -97,11 +97,7 @@ install_AUR_packages() {
 }
 
 install_pyenv() {
-	display_message "$INFO_MESSAGE" "SETTING UP PYENV..."
-
-	## install pyenv
 	curl https://pyenv.run | bash
-
 }
 
 install_pip_packages() {
@@ -118,15 +114,15 @@ install_pip_packages() {
 setup_git() {
 	git config --global user.email "gustavorangel91@gmail.com"
 	git config --global user.name "Gustavo Rangel"
+    git config advice.addIgnoredFile false
 }
 
 setup_repos() {
-    dotfilesTmpPath=$HOME/tmp/dotfiles
-
     gh auth login
     gh repo clone scripts "$HOME/scripts"
 
     # TODO test this
+    dotfilesTmpPath=$HOME/tmp/dotfiles
     gh repo clone dotfiles "$dotfilesTmpPath" 
     cp "$dotfilesTmpPath/*" "$HOME/.config/"
     rm -rf "$dotfilesTmpPath"
@@ -140,10 +136,9 @@ setup_vim() {
 upgrade_and_clean_system() {
 	display_message "$INFO_MESSAGE" "UPGRADING AND CLEANING SYSTEM..."
 
-	# update and upgrade
 	sudo pacman -Syu --noconfirm
-	## clean cache
-	sudo pacman -Scc --noconfirm
+	
+	sudo pacman -Scc --noconfirm  # clean cache
 }
 
 change_shell() {

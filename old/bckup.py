@@ -9,10 +9,12 @@ BCKUP_FOLDER = Path(__file__).parent / "backup/"
 
 
 FOLDERS_PATH = {
-    # "cope": HOME,
-    # "Default": HOME / ".config" / "BraveSoftware" / "Brave-Browser",
-    # "projects": HOME,
+    # "folder": path/to/parent_folder
+    "cope": HOME,
+    "Default": HOME / ".config" / "BraveSoftware" / "Brave-Browser",
+    "projects": HOME,
     ".todo": HOME,
+    "zoxide": HOME / ".local" / "share",
 }
 
 if __name__ == "__main__":
@@ -22,11 +24,11 @@ if __name__ == "__main__":
         print("You need to choose between backup (-b) or restore (-r)")
         sys.exit()
 
-    elif sys.argv[1] == '-b':
+    elif sys.argv[1] == "-b":
         for folder, path in FOLDERS_PATH.items():
             copytree(src=path / Path(folder), dst=BCKUP_FOLDER / Path(folder))
 
-    elif sys.argv[1] == '-r':
+    elif sys.argv[1] == "-r":
         for folder, path in FOLDERS_PATH.items():
             copytree(dst=path / Path(folder), src=BCKUP_FOLDER / Path(folder))
 
