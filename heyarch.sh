@@ -82,7 +82,7 @@ PIP_PACKAGES=(
 	isort # imports
 )
 
-# ========== ========== ========== ========== function definition
+# ========== ========== ========== ========== functions definition
 
 install_pacman_packages() {
 	for package in "${PACMAN_PACKAGES[@]}"; do
@@ -90,7 +90,16 @@ install_pacman_packages() {
 	done
 }
 
+install_paru() {
+    mkdir $HOME/apps && cd $HOME/apps
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
+    makepkg -si
+}
+
 install_AUR_packages() {
+    # install_paru 
+
 	for package in "${AUR_PACKAGES[@]}"; do
 		paru -S "$package" --noconfirm
 	done
@@ -145,7 +154,7 @@ change_shell() {
 	chsh -s /bin/zsh
 }
 
-# ========== ========== ========== ========== functions calls
+# ========== ========== ========== ========== functions call
 
 upgrade_and_clean_system
 install_pacman_packages
