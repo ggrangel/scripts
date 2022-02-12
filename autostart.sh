@@ -16,6 +16,7 @@ picom --config $HOME/.config/misc/picom.conf &
 xautolock -time 30 -locker slock &
 sh $HOME/scripts/remaps.sh
 insync start &
+lxsession &  
 # /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 # run xfce4-power-manager &

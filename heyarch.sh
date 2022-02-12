@@ -19,7 +19,7 @@ PACMAN_PACKAGES=(
 	htop
 	insync
 	kitty
-	lxsession
+    lxsession  # policy kit authentication agent (for apps like gparted and etcher)
 	ncdu # sort and list disk usage by size
 	neofetch
 	neovim
