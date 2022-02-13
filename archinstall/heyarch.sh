@@ -4,20 +4,16 @@
 
 PACMAN_PACKAGES=(
 	base-devel
-	brave-bin
 	cmatrix
 	# codespell
 	dmenu
-	etcher-bin
 	feh 
 	figlet
 	fzf # used by zoxide
 	git
     go  # for vim-hexokinase
-	gparted
 	highlight # ccat alias
 	htop
-	insync
 	kitty
     lxsession  # policy kit authentication agent (for apps like gparted and etcher)
 	ncdu # sort and list disk usage by size
@@ -35,6 +31,7 @@ PACMAN_PACKAGES=(
 	qtile
 	ranger
 	rofi
+    rsync
 	scrot
 	shellcheck
 	shfmt
@@ -48,10 +45,13 @@ PACMAN_PACKAGES=(
 	udisks2
 	ueberzug # ranger preview image
 	unzip    # for :LspInstall
-	whatsapp-nativefier
 	xautolock
 	xcape # change keymaps
 	xclip
+    xorg-server
+    xorg-xinit
+    xorg-xkill
+    xorg-xrandr
 	zathura
 	zathura-pdf-poppler 
 	zoxide
@@ -60,15 +60,20 @@ PACMAN_PACKAGES=(
 )
 
 AUR_PACKAGES=(
+    balena-etcher
 	bashmount
+	brave-bin
 	colorpicker
 	devour 
 	dtrx   # extract compressed files
 	hollywood
+	insync
+    nerd-fonts-complete
 	nvim-packer-git
 	sc-im
 	stylua
 	todotxt
+	whatsapp-nativefier
 )
 
 PIP_PACKAGES=(
@@ -126,14 +131,8 @@ setup_git() {
 }
 
 setup_repos() {
-    gh auth login
-    gh repo clone scripts "$HOME/scripts"
-
-    # TODO test this
-    dotfilesTmpPath=$HOME/tmp/dotfiles
-    gh repo clone dotfiles "$dotfilesTmpPath" 
-    cp "$dotfilesTmpPath/*" "$HOME/.config/"
-    rm -rf "$dotfilesTmpPath"
+    git clone https://github.com/gustavobrangel/scripts.git $HOME/
+    git clone https://github.com/gustavobrangel/dotfiles.git $HOME/.config
 }
 
 setup_vim() {
@@ -143,7 +142,6 @@ setup_vim() {
 
 upgrade_and_clean_system() {
 	sudo pacman -Syu --noconfirm
-	
 	sudo pacman -Scc --noconfirm  # clean cache
 }
 
@@ -153,13 +151,12 @@ change_shell() {
 
 # ========== ========== ========== ========== functions call
 
-upgrade_and_clean_system
-install_pacman_packages
-install_AUR_packages
-install_pyenv
-install_pip_packages
-setup_git
-setup_repos
+#install_pacman_packages
+#install_AUR_packages
+#install_pyenv
+#install_pip_packages
+#setup_git
+#setup_repos
 setup_vim
-change_shell
-upgrade_and_clean_system
+#change_shell
+#upgrade_and_clean_system
