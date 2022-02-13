@@ -8,7 +8,7 @@ xset r rate 300 75
 setxkbmap -option ctrl:nocaps
 
 # But when it is pressed only once, treat it as escape.
-killall xcape 2>/dev/null ; xcape -e 'Control_L=Escape'
+# killall xcape 2>/dev/null ; xcape -e 'Control_L=Escape'
 
 # Map the altgr button to left super as well.
 # xmodmap -e 'keycode 108 = Super_L'
