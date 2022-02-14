@@ -1,23 +1,29 @@
-defaultFolder=$HOME/tmp
-defaultName=$'%y%m%d-%s_SS'
+#!/bin/bash
 
-name=$(echo "$defaultName" | dmenu -fn "$DMENUFONT" -p "Rename SS?")
+defaultFolder="$HOME/tmp"
+defaultName=$(date +%s)
+
+name=$(echo "$defaultName" | dmenu -fn "" -p "Rename SS?")
 
 if [[ $name == "" ]]; then
-    exit 1
+	exit 1
 fi
 
+imagePath="$defaultFolder/$name".png
+
 case $1 in
-    'screen')
-        scrot "$defaultFolder"/"$name".jpg
-        ;;
-    'window')
-        scrot -u "$defaultFolder"/"$name".jpg
-        ;;
-    'select')
-        scrot -s "$defaultFolder"/"$name".jpg
-        ;;
-    *)
-        exit 0
-        ;;
+'screen')
+	maim "$imagePath"
+	;;
+'window')
+	maim -i "$(xdotool getactivewindow)" "$imagePath"
+	;;
+'select')
+	maim -s "$imagePath"
+	;;
+*)
+	exit 0
+	;;
 esac
+
+xclip -selection clipboard -t image/png -i "$imagePath"
