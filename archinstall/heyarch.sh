@@ -7,22 +7,22 @@ PACMAN_PACKAGES=(
 	cmatrix
 	# codespell
 	dmenu
-	feh 
+	feh
 	figlet
 	fzf # used by zoxide
 	git
-    go  # for vim-hexokinase
+	go        # for vim-hexokinase
 	highlight # ccat alias
 	htop
 	kitty
-    lxsession  # policy kit authentication agent (for apps like gparted and etcher)
-	ncdu # sort and list disk usage by size
+	lxsession # policy kit authentication agent (for apps like gparted and etcher)
+	ncdu      # sort and list disk usage by size
 	neofetch
 	neovim
 	npm # required by LspInstall
 	numlockx
 	pass
-    pcmanfm  # sometimes it is useful 
+	pcmanfm # sometimes it is useful
 	picom
 	psutils
 	pulsemixer
@@ -31,7 +31,7 @@ PACMAN_PACKAGES=(
 	qtile
 	ranger
 	rofi
-    rsync
+	rsync
 	scrot
 	shellcheck
 	shfmt
@@ -46,31 +46,33 @@ PACMAN_PACKAGES=(
 	ueberzug # ranger preview image
 	unzip    # for :LspInstall
 	xautolock
-	xcape # change keymaps
+	xcape   # change keymaps
+	xdotool # for screenshooter.sh
 	xclip
-    xorg-server
-    xorg-xinit
-    xorg-xkill
-    xorg-xrandr
+	xorg-server
+	xorg-xinit
+	xorg-xkill
+	xorg-xrandr
 	zathura
-	zathura-pdf-poppler 
+	zathura-pdf-poppler
 	zoxide
 	zsh
 	zsh-syntax-highlighting
 )
 
 AUR_PACKAGES=(
-    balena-etcher
+	balena-etcher
 	bashmount
 	brave-bin
 	colorpicker
-	devour 
-	dtrx   # extract compressed files
+	devour
+	dtrx # extract compressed files
 	hollywood
 	insync
-    nerd-fonts-complete
+	nerd-fonts-complete
 	nvim-packer-git
 	sc-im
+	slack-desktop
 	stylua
 	todotxt
 	whatsapp-nativefier
@@ -96,13 +98,13 @@ install_pacman_packages() {
 }
 
 install_paru() {
-    git clone https://aur.archlinux.org/paru.git $HOME/apps/paru
-    cd $HOME/apps/paru
-    makepkg -si
+	git clone https://aur.archlinux.org/paru.git $HOME/apps/paru
+	cd $HOME/apps/paru
+	makepkg -si
 }
 
 install_AUR_packages() {
-    # install_paru 
+	# install_paru
 
 	for package in "${AUR_PACKAGES[@]}"; do
 		paru -S "$package" --noconfirm
@@ -127,22 +129,22 @@ install_pip_packages() {
 setup_git() {
 	git config --global user.email "gustavorangel91@gmail.com"
 	git config --global user.name "Gustavo Rangel"
-    git config advice.addIgnoredFile false
+	git config advice.addIgnoredFile false
 }
 
 setup_repos() {
-    git clone https://github.com/gustavobrangel/scripts.git $HOME/
-    git clone https://github.com/gustavobrangel/dotfiles.git $HOME/.config
+	git clone https://github.com/gustavobrangel/scripts.git $HOME/
+	git clone https://github.com/gustavobrangel/dotfiles.git $HOME/.config
 }
 
 setup_vim() {
-    git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-    nvim --headless +PackerSync +qa
+	git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+	nvim --headless +PackerSync +qa
 }
 
 upgrade_and_clean_system() {
 	sudo pacman -Syu --noconfirm
-	sudo pacman -Scc --noconfirm  # clean cache
+	sudo pacman -Scc --noconfirm # clean cache
 }
 
 change_shell() {
