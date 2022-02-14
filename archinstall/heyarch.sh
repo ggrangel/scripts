@@ -16,6 +16,7 @@ PACMAN_PACKAGES=(
 	htop
 	kitty
 	lxsession # policy kit authentication agent (for apps like gparted and etcher)
+    maim
 	ncdu      # sort and list disk usage by size
 	neofetch
 	neovim
@@ -32,7 +33,6 @@ PACMAN_PACKAGES=(
 	ranger
 	rofi
 	rsync
-	scrot
 	shellcheck
 	shfmt
 	slack-desktop
