@@ -11,12 +11,15 @@ PACMAN_PACKAGES=(
 	figlet
 	fzf # used by zoxide
 	git
+    glib2  # gio trash 
 	go        # for vim-hexokinase
 	highlight # ccat alias
 	htop
 	kitty
 	lxsession # policy kit authentication agent (for apps like gparted and etcher)
+    luarocks
     maim
+    noto-fonts
 	ncdu      # sort and list disk usage by size
 	neofetch
 	neovim
@@ -40,6 +43,8 @@ PACMAN_PACKAGES=(
 	sxhkd
 	sxiv
 	telegram-desktop
+    ttf-dejavu
+    ttf-liberation
 	# time
 	tmux
 	udisks2

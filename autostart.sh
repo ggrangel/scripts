@@ -15,7 +15,7 @@ numlockx &
 picom --config $HOME/.config/misc/picom.conf &
 xautolock -time 30 -locker slock &
 sh $HOME/scripts/remaps.sh
-insync start &
+# insync start &
 lxsession &  
 # /usr/lib/xfce4/notifyd/xfce4-notifyd &
 

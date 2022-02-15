@@ -16,7 +16,7 @@ case $1 in
 	maim "$imagePath"
 	;;
 'window')
-	maim -i "$(xdotool getactivewindow)" "$imagePath"
+    maim -i "$(xdotool getactivewindow)" "$imagePath"
 	;;
 'select')
 	maim -s "$imagePath"
