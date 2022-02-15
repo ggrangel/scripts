@@ -45,7 +45,6 @@ PACMAN_PACKAGES=(
 	telegram-desktop
     ttf-dejavu
     ttf-liberation
-	# time
 	tmux
 	udisks2
 	ueberzug # ranger preview image
