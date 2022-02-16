@@ -3,6 +3,7 @@
 # ========== ========== ========== ========== global variables
 
 PACMAN_PACKAGES=(
+    awesome
 	base-devel
 	cmatrix
 	# codespell
@@ -32,7 +33,6 @@ PACMAN_PACKAGES=(
 	pulsemixer
 	pyenv
 	python-pip
-	qtile
 	ranger
 	rofi
 	rsync
