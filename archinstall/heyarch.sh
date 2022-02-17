@@ -3,7 +3,7 @@
 # ========== ========== ========== ========== global variables
 
 PACMAN_PACKAGES=(
-    awesome
+	awesome
 	base-devel
 	cmatrix
 	# codespell
@@ -12,16 +12,16 @@ PACMAN_PACKAGES=(
 	figlet
 	fzf # used by zoxide
 	git
-    glib2  # gio trash 
+	glib2     # gio trash
 	go        # for vim-hexokinase
 	highlight # ccat alias
 	htop
 	kitty
 	lxsession # policy kit authentication agent (for apps like gparted and etcher)
-    luarocks
-    maim
-    noto-fonts
-	ncdu      # sort and list disk usage by size
+	luarocks
+	maim
+	noto-fonts
+	ncdu # sort and list disk usage by size
 	neofetch
 	neovim
 	npm # required by LspInstall
@@ -29,6 +29,7 @@ PACMAN_PACKAGES=(
 	pass
 	pcmanfm # sometimes it is useful
 	picom
+	prettier
 	psutils
 	pulsemixer
 	pyenv
@@ -43,8 +44,8 @@ PACMAN_PACKAGES=(
 	sxhkd
 	sxiv
 	telegram-desktop
-    ttf-dejavu
-    ttf-liberation
+	ttf-dejavu
+	ttf-liberation
 	tmux
 	udisks2
 	ueberzug # ranger preview image
