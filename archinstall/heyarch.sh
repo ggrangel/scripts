@@ -12,7 +12,6 @@ PACMAN_PACKAGES=(
 	figlet
 	fzf # used by zoxide
 	git
-	glib2     # gio trash
 	go        # for vim-hexokinase
 	highlight # ccat alias
 	htop
