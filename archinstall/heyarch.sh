@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+# For GTK theming: https://github.com/antoniosarosi/dotfiles/blob/master/README.md#gtk-theming
+
 # ========== ========== ========== ========== global variables
 
 PACMAN_PACKAGES=(
@@ -51,7 +53,7 @@ PACMAN_PACKAGES=(
 	unzip    # for :LspInstall
 	xautolock
 	xcape   # change keymaps
-	xdotool # for screenshooter.sh
+	xdotool # simulates keyboard input and mouse activity
 	xclip
 	xorg-server
 	xorg-xinit
@@ -143,7 +145,7 @@ setup_repos() {
 
 setup_vim() {
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-	nvim --headless +PackerSync +qa
+	# nvim --headless +PackerSync +qa
 }
 
 upgrade_and_clean_system() {
@@ -155,6 +157,11 @@ change_shell() {
 	chsh -s /bin/zsh
 }
 
+gtk_theming() {
+    sudo cp -a ./theme/Material-Black-Blueberry/ /usr/share/theme/
+    sudo cp -a ./icons/Material-Black-Blueberry-Suru/ /usr/share/icon/
+}
+
 # ========== ========== ========== ========== functions call
 
 #install_pacman_packages
@@ -163,6 +170,7 @@ change_shell() {
 #install_pip_packages
 #setup_git
 #setup_repos
-setup_vim
+# setup_vim
 #change_shell
+gtk_theming
 #upgrade_and_clean_system
