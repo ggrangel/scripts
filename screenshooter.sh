@@ -22,7 +22,7 @@ case $1 in
 	;;
 'select')
 	maim -s "$imagePath"
-    dunstify 'Screenshooter' "Region print saved to $imagePath"
+    notify-send 'Screenshooter' "Region print saved to $imagePath"
 	;;
 *)
 	exit 0

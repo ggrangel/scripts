@@ -2,7 +2,7 @@
 
 declare -a options=(
 	"Lock Screen"
-	"Quit Qtile"
+	# "Quit Qtile"
 	"Reboot"
 	"Shutdown"
 )
@@ -14,9 +14,9 @@ case $choice in
 	# $HOME/scripts/locker.sh
 	slock
 	;;
-'Quit Qtile')
-	qtile cmd-obj -o cmd -f shutdown
-	;;
+	# 'Quit Qtile')
+	# 	qtile cmd-obj -o cmd -f shutdown
+	# 	;;
 'Reboot')
 	shutdown now -r
 	;;
