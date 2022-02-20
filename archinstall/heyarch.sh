@@ -159,8 +159,8 @@ change_shell() {
 }
 
 gtk_theming() {
-    sudo cp -a ./theme/Material-Black-Blueberry/ /usr/share/theme/
-    sudo cp -a ./icons/Material-Black-Blueberry-Suru/ /usr/share/icon/
+    sudo cp -a ./themes/Material-Black-Blueberry/ /usr/share/themes/
+    sudo cp -a ./icons/Material-Black-Blueberry-Suru/ /usr/share/icons/
 }
 
 # ========== ========== ========== ========== functions call
