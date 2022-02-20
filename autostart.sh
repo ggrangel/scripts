@@ -14,6 +14,7 @@ picom --config $HOME/.config/misc/picom.conf &
 run telegram-desktop &
 run whatsapp-nativefier &
 insync start &
-numlockx &
+run brave &
+run kitty &
 lxsession &
 xautolock -time 30 -locker slock &
