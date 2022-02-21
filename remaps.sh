@@ -13,7 +13,7 @@ xcape -e 'Control_L=Escape'
 
 # Map the right alt to left super as well.
 xmodmap -e 'remove mod1 = Alt_R'
-xmodmap -e 'keycode 108 = Super_R'
+xmodmap -e 'keycode 108 = Super_L'
 xmodmap -e 'clear mod4'
 xmodmap -e 'add mod4 = Super_R'
 xmodmap -e 'add mod4 = Super_L'
