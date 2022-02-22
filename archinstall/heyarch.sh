@@ -44,7 +44,7 @@ PACMAN_PACKAGES=(
 	slack-desktop
 	slock
 	sxhkd
-	sxiv
+	sxiv  # project archived. consider migrating to nsxiv later on
 	telegram-desktop
 	ttf-dejavu
 	ttf-liberation
