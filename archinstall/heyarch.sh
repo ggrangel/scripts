@@ -99,23 +99,17 @@ PIP_PACKAGES=(
 # ========== ========== ========== ========== functions definition
 
 install_pacman_packages() {
-	for package in "${PACMAN_PACKAGES[@]}"; do
-		sudo pacman -S "$package" --noconfirm
-	done
+    sudo pacman -S "${PACMAN_PACKAGES[@]}" --noconfirm
 }
 
 install_paru() {
-	git clone https://aur.archlinux.org/paru.git $HOME/apps/paru
-	cd $HOME/apps/paru
+	git clone https://aur.archlinux.org/paru.git "$HOME/apps/paru"
+	cd "$HOME/apps/paru" 
 	makepkg -si
 }
 
 install_AUR_packages() {
-	# install_paru
-
-	for package in "${AUR_PACKAGES[@]}"; do
-		paru -S "$package" --noconfirm
-	done
+    sudo pacman -S "${AUR_PACKAGES[@]}" --noconfirm
 }
 
 install_pyenv() {
@@ -140,8 +134,8 @@ setup_git() {
 }
 
 setup_repos() {
-	git clone https://github.com/gustavobrangel/scripts.git $HOME/
-	git clone https://github.com/gustavobrangel/dotfiles.git $HOME/.config
+	git clone https://github.com/gustavobrangel/scripts.git "$HOME/"
+	git clone https://github.com/gustavobrangel/dotfiles.git "$HOME/.config"
 }
 
 setup_vim() {
@@ -165,13 +159,13 @@ gtk_theming() {
 
 # ========== ========== ========== ========== functions call
 
-#install_pacman_packages
-#install_AUR_packages
-#install_pyenv
-#install_pip_packages
-#setup_git
-#setup_repos
-# setup_vim
-#change_shell
+install_pacman_packages
+install_AUR_packages
+install_pyenv
+install_pip_packages
+setup_git
+setup_repos
+setup_vim
+change_shell
 gtk_theming
-#upgrade_and_clean_system
+upgrade_and_clean_system
