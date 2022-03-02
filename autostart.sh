@@ -11,10 +11,10 @@ run sxhkd -c ~/.config/misc/sxhkdrc &
 sh $HOME/scripts/remaps.sh &
 # dunst &
 picom --config $HOME/.config/misc/picom.conf &
+run brave &
 run telegram-desktop &
 run whatsapp-nativefier &
 insync start &
-run brave &
-run kitty &
 lxsession &
 xautolock -time 30 -locker slock &
+run kitty &
