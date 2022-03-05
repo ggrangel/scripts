@@ -6,14 +6,14 @@ function run {
 	fi
 }
 
-feh --no-fehbg --bg-fill --randomize $HOME/drive/wallpapers/* &
+feh --no-fehbg --bg-fill --randomize ~/drive/wallpapers/* &
 run sxhkd -c ~/.config/misc/sxhkdrc &
-sh $HOME/scripts/remaps.sh &
+sh ~/scripts/remaps.sh &
 # dunst &
-picom --config $HOME/.config/misc/picom.conf &
+picom --config ~/.config/misc/picom.conf &
 run brave &
 run telegram-desktop &
-run whatsapp-nativefier &
+# run whatsapp-nativefier &
 insync start &
 lxsession &
 xautolock -time 30 -locker slock &

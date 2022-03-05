@@ -56,6 +56,7 @@ PACMAN_PACKAGES=(
 	xcape   # change keymaps
 	xdotool # simulates keyboard input and mouse activity
 	xclip
+    xsel
 	xorg-server
 	xorg-xinit
 	xorg-xkill
@@ -157,6 +158,10 @@ gtk_theming() {
     sudo cp -a ./icons/Material-Black-Blueberry-Suru/ /usr/share/icons/
 }
 
+ssh_key() {
+    ssh-keygen
+}
+
 # ========== ========== ========== ========== functions call
 
 install_pacman_packages
@@ -168,4 +173,5 @@ setup_repos
 setup_vim
 change_shell
 gtk_theming
+ssh_key()
 upgrade_and_clean_system
