@@ -1,8 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
-declare -a options=(
+# Call this script whenever you want to lock, reboot or shutdown the system
+# A rofi window will popup
+# There is a shxkd keybinding to call it.
+
+options=(
 	"Lock Screen"
-	# "Quit Qtile"
 	"Reboot"
 	"Shutdown"
 )
@@ -11,12 +14,8 @@ choice=$(printf '%s\n' "${options[@]}" | rofi -dmenu -i -p 'Choose')
 
 case $choice in
 'Lock Screen')
-	# $HOME/scripts/locker.sh
 	slock
 	;;
-	# 'Quit Qtile')
-	# 	qtile cmd-obj -o cmd -f shutdown
-	# 	;;
 'Reboot')
 	shutdown now -r
 	;;

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Open a tmux session with project-specific windows
+# TODO: show a prompt with all the projects that I'm currently working on, so I can choose which one to open.
+
 airbnb() {
 	project="airbnb"
 
@@ -31,7 +34,6 @@ newsweek() {
 	else
 		tmux attach -t "$project"
 	fi
-
 }
 
 airbnb

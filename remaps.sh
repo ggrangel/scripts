@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# This script is called on startup to:
+# 1. increase the key rate speed
+# 2. change the behaviour of the caps lock key: map it to escape, but when it's pressed alongside another key, it's mapped to control
+# 2. map the right alt to the super key.
+
 # Increase key speed via a rate change.
 # xset r rate [delay] [rate]
 xset r rate 300 75

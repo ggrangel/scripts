@@ -1,6 +1,12 @@
 #!/usr/bin/bash
 
-# For GTK theming: https://github.com/antoniosarosi/dotfiles/blob/master/README.md#gtk-theming
+# This script does the following:
+# 1. install pacman, aur and pip packages
+# 2. install pyenv
+# 3. setup git configuration
+# 4. clone github repositories
+# 5. install nvim's packer
+# 6. change default shell to zsh
 
 # ========== ========== ========== ========== global variables
 
@@ -134,10 +140,6 @@ setup_git() {
 	git config advice.addIgnoredFile false
 }
 
-setup_repos() {
-	git clone https://github.com/gustavobrangel/scripts.git "$HOME/"
-	git clone https://github.com/gustavobrangel/dotfiles.git "$HOME/.config"
-}
 
 setup_vim() {
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
@@ -162,6 +164,11 @@ ssh_key() {
     ssh-keygen
 }
 
+setup_repos() {
+	git clone git@github.com:gustavobrangel/dotfiles.git "$HOME/"
+	git clone git@github.com:gustavobrangel/scripts.git "$HOME/.config"
+}
+
 # ========== ========== ========== ========== functions call
 
 install_pacman_packages
@@ -169,9 +176,9 @@ install_AUR_packages
 install_pyenv
 install_pip_packages
 setup_git
-setup_repos
 setup_vim
 change_shell
 gtk_theming
 ssh_key()
+setup_repos()
 upgrade_and_clean_system

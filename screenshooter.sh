@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# This script is called to take a screenshot of all the screens, a specific region or a window.
+# There are sxhkd's keybindings to all its options
+
 defaultFolder="$HOME/tmp"
 defaultName=$(date +%s)
 

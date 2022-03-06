@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This script is called on startup by a window manager 
+
 function run {
 	if ! pgrep $(basename $1); then
 		$@ &

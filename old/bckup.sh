@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This script 
+
 backupFolder="/run/media/"
 
 sudo mount /dev/sdb1 /run/media/
