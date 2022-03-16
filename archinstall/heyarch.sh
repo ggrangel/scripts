@@ -179,6 +179,6 @@ setup_git
 setup_vim
 change_shell
 gtk_theming
-ssh_key()
-setup_repos()
+ssh_key
+setup_repos
 upgrade_and_clean_system
