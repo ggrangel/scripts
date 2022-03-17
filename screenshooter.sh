@@ -3,7 +3,7 @@
 # This script is called to take a screenshot of all the screens, a specific region or a window.
 # There are sxhkd's keybindings to all its options
 
-defaultFolder="$HOME/tmp"
+defaultFolder="$HOME/tmp/screenshots/"
 defaultName=$(date +%s)
 
 name=$(echo "$defaultName" | dmenu -fn "" -p "Rename SS?")
