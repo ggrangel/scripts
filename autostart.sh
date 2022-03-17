@@ -13,6 +13,8 @@ run sxhkd -c ~/.config/misc/sxhkdrc &
 sh ~/scripts/remaps.sh &
 # dunst &
 picom --config ~/.config/misc/picom.conf &
+redshift -P -O 5000
+
 run brave &
 run telegram-desktop &
 # run whatsapp-nativefier &

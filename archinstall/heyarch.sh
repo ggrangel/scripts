@@ -85,6 +85,7 @@ AUR_PACKAGES=(
 	insync
 	nerd-fonts-complete
 	nvim-packer-git
+    redshift-minimal  # change screen temperature
 	sc-im
 	slack-desktop
 	stylua
