@@ -20,6 +20,7 @@ PACMAN_PACKAGES=(
 	figlet
 	fzf # used by zoxide
 	git
+	github-cli
 	go        # for vim-hexokinase
 	highlight # ccat alias
 	htop
@@ -85,7 +86,7 @@ AUR_PACKAGES=(
 	insync
 	nerd-fonts-complete
 	nvim-packer-git
-    redshift-minimal  # change screen temperature
+	redshift-minimal # change screen temperature
 	sc-im
 	slack-desktop
 	stylua
