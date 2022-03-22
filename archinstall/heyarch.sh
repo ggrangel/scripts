@@ -24,8 +24,8 @@ PACMAN_PACKAGES=(
 	highlight # ccat alias
 	htop
 	kitty
-    kvantum-qt5  # apply gtk themes to qt programs
-	lxsession # policy kit authentication agent (for apps like gparted and etcher)
+	kvantum-qt5 # apply gtk themes to qt programs
+	lxsession   # policy kit authentication agent (for apps like gparted and etcher)
 	luarocks
 	maim
 	noto-fonts
@@ -50,7 +50,7 @@ PACMAN_PACKAGES=(
 	slack-desktop
 	slock
 	sxhkd
-	sxiv  # project archived. consider migrating to nsxiv later on
+	sxiv # project archived. consider migrating to nsxiv later on
 	telegram-desktop
 	ttf-dejavu
 	ttf-liberation
@@ -62,7 +62,7 @@ PACMAN_PACKAGES=(
 	xcape   # change keymaps
 	xdotool # simulates keyboard input and mouse activity
 	xclip
-    xsel
+	xsel
 	xorg-server
 	xorg-xinit
 	xorg-xkill
@@ -92,6 +92,12 @@ AUR_PACKAGES=(
 	whatsapp-nativefier
 )
 
+PYTHON_PACKAGES=(
+	pyright
+	python-black
+	python-isort
+)
+
 PIP_PACKAGES=(
 	## Linters
 	# flake8     # general
@@ -106,21 +112,25 @@ PIP_PACKAGES=(
 # ========== ========== ========== ========== functions definition
 
 install_pacman_packages() {
-    sudo pacman -S "${PACMAN_PACKAGES[@]}" --noconfirm
+	sudo pacman -S "${PACMAN_PACKAGES[@]}" --noconfirm
 }
 
 install_paru() {
 	git clone https://aur.archlinux.org/paru.git "$HOME/apps/paru"
-	cd "$HOME/apps/paru" 
+	cd "$HOME/apps/paru"
 	makepkg -si
 }
 
 install_AUR_packages() {
-    sudo pacman -S "${AUR_PACKAGES[@]}" --noconfirm
+	sudo pacman -S "${AUR_PACKAGES[@]}" --noconfirm
 }
 
 install_pyenv() {
 	curl https://pyenv.run | bash
+}
+
+install_python_packages() {
+	sudo pacman -S "${PYTHON_PACKAGES[@]}" --noconfirm
 }
 
 install_pip_packages() {
@@ -140,7 +150,6 @@ setup_git() {
 	git config advice.addIgnoredFile false
 }
 
-
 setup_vim() {
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 	# nvim --headless +PackerSync +qa
@@ -156,12 +165,12 @@ change_shell() {
 }
 
 gtk_theming() {
-    sudo cp -a ./themes/Material-Black-Blueberry/ /usr/share/themes/
-    sudo cp -a ./icons/Material-Black-Blueberry-Suru/ /usr/share/icons/
+	sudo cp -a ./themes/Material-Black-Blueberry/ /usr/share/themes/
+	sudo cp -a ./icons/Material-Black-Blueberry-Suru/ /usr/share/icons/
 }
 
 ssh_key() {
-    ssh-keygen
+	ssh-keygen
 }
 
 setup_repos() {
