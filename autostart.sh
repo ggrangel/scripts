@@ -14,6 +14,7 @@ sh ~/scripts/remaps.sh &
 # dunst &
 picom --config ~/.config/misc/picom.conf &
 # run brave &
+redshift -P -O 5000
 run telegram-desktop &
 # run whatsapp-nativefier &
 insync start &
