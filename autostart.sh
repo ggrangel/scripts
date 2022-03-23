@@ -18,6 +18,7 @@ redshift -P -O 5000
 run telegram-desktop &
 # run whatsapp-nativefier &
 insync start &
-lxsession &
+lxsession &  # authentication agent
 xautolock -time 30 -locker slock &
+xset s off # disable auto screen saver blanking
 run kitty &
