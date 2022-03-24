@@ -26,7 +26,7 @@ PACMAN_PACKAGES=(
 	htop
 	kitty
 	kvantum-qt5 # apply gtk themes to qt programs
-	lxsession   # policy kit authentication agent (for apps like gparted and etcher)
+	# lxsession   # policy kit authentication agent (for apps like gparted and etcher)
 	luarocks
 	maim
 	noto-fonts
