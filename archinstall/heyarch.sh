@@ -44,6 +44,7 @@ PACMAN_PACKAGES=(
 	pyenv
 	python-pip
 	ranger
+	redshift
 	rofi
 	rsync
 	shellcheck

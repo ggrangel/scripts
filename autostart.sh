@@ -3,22 +3,18 @@
 # This script is called on startup by a window manager
 
 function run {
-	if ! pgrep $(basename $1); then
+	if ! pgrep $(basename $2); then
 		$@ &
 	fi
 }
 
-feh --no-fehbg --bg-fill --randomize ~/drive/wallpapers/selected/* &
-run sxhkd -c ~/.config/misc/sxhkdrc &
+python ~/scripts/wallpapers.py --set &
+run sxhkd -c ~/.config/sxhkdrc &
 sh ~/scripts/remaps.sh &
-# dunst &
-picom --config ~/.config/misc/picom.conf &
-# run brave &
+picom --config ~/.config/picom.conf &
 redshift -P -O 5000
 run telegram-desktop &
-# run whatsapp-nativefier &
 insync start &
-# lxsession &  # authentication agent
 xautolock -time 30 -locker slock &
-xset s off # disable auto screen saver blanking
+xset s off & # disable auto screen saver blanking
 run kitty &
