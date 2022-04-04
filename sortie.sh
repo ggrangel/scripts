@@ -9,6 +9,8 @@
 
 options=(
 	"Lock Screen"
+    "Restart AwesomeWM"
+    "Quit AwesomeWM"
 	"Reboot"
 	"Shutdown"
 )
@@ -19,6 +21,12 @@ case $choice in
 'Lock Screen')
 	slock
 	;;
+'Restart AwesomeWM')
+    awesome-client 'awesome.restart()'
+    ;;
+'Quit AwesomeWM')
+    awesome-client 'awesome.quit()'
+    ;;
 'Reboot')
 	shutdown now -r
 	;;
