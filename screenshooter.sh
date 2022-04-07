@@ -6,26 +6,26 @@
 defaultFolder="$HOME/tmp/screenshots/"
 defaultName=$(date +%s)
 
-name=$(echo "$defaultName" | dmenu -fn "" -p "Rename SS?")
+# name=$(echo "$defaultName" | dmenu -fn "" -p "Rename SS?")
 
-if [[ $name == "" ]]; then
-	exit 1
-fi
+# if [[ $name == "" ]]; then
+# 	exit 1
+# fi
 
-imagePath="$defaultFolder/$name".png
+imagePath="$defaultFolder/$defaultName".png
 
 case $1 in
 'screen')
 	maim "$imagePath"
-    notify-send 'Screenshooter' "Screen print saved to $imagePath"
+	notify-send 'Screenshooter' "Screen print saved to $imagePath"
 	;;
 'window')
-    maim -i "$(xdotool getactivewindow)" "$imagePath"
-    notify-send 'Screenshooter' "Window print saved to $imagePath"
+	maim -i "$(xdotool getactivewindow)" "$imagePath"
+	notify-send 'Screenshooter' "Window print saved to $imagePath"
 	;;
 'select')
 	maim -s "$imagePath"
-    notify-send 'Screenshooter' "Region print saved to $imagePath"
+	notify-send 'Screenshooter' "Region print saved to $imagePath"
 	;;
 *)
 	exit 0
