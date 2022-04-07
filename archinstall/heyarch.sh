@@ -51,6 +51,7 @@ PACMAN_PACKAGES=(
 	shfmt
 	slack-desktop
 	slock
+	stow
 	sxhkd
 	sxiv # project archived. consider migrating to nsxiv later on
 	telegram-desktop
@@ -93,6 +94,7 @@ AUR_PACKAGES=(
 	stylua
 	todotxt
 	whatsapp-nativefier
+	vocage
 )
 
 PYTHON_PACKAGES=(
