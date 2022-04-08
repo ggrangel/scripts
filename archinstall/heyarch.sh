@@ -93,8 +93,9 @@ AUR_PACKAGES=(
 	slack-desktop
 	stylua
 	todotxt
+	toipe  # touch typing game
 	whatsapp-nativefier
-	vocage
+	vocage  # flashcard terminal-based app
 )
 
 PYTHON_PACKAGES=(
