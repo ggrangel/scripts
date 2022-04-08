@@ -4,7 +4,7 @@
 
 REPOS=( 
 "/home/rangelgbr/.password-store/"
-"/home/rangelgbr/.config/"
+"/home/rangelgbr/dotfiles/"
 "/home/rangelgbr/scripts/"
 )
 
