@@ -7,7 +7,7 @@
 
 # Increase key speed via a rate change.
 # xset r rate [delay] [rate]
-xset r rate 300 75
+# xset r rate 300 75
 
 # Map the caps lock key to control...
 setxkbmap -option ctrl:nocaps
