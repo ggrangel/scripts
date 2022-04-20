@@ -25,14 +25,16 @@ PACMAN_PACKAGES=(
 	highlight # ccat alias
 	htop
 	kitty
+	klavaro  # touch typing tutor program
 	kvantum-qt5 # apply gtk themes to qt programs
-	# lxsession   # policy kit authentication agent (for apps like gparted and etcher)
+	lazygit
 	luarocks
+	# lxsession   # policy kit authentication agent (for apps like gparted and etcher)
 	maim
-	noto-fonts
 	ncdu # sort and list disk usage by size
 	neofetch
 	neovim
+	noto-fonts
 	npm # required by LspInstall
 	numlockx
 	pass
@@ -55,21 +57,21 @@ PACMAN_PACKAGES=(
 	sxhkd
 	sxiv # project archived. consider migrating to nsxiv later on
 	telegram-desktop
+	tmux
 	ttf-dejavu
 	ttf-liberation
-	tmux
 	udisks2
 	ueberzug # ranger preview image
 	unzip    # for :LspInstall
 	xautolock
 	xcape   # change keymaps
-	xdotool # simulates keyboard input and mouse activity
 	xclip
-	xsel
+	xdotool # simulates keyboard input and mouse activity
 	xorg-server
 	xorg-xinit
 	xorg-xkill
 	xorg-xrandr
+	xsel
 	zathura
 	zathura-pdf-poppler
 	zoxide
