@@ -29,8 +29,7 @@ def _set_wallpaper(mon):
     with open(curr_wallpapers_file, "r") as file:
         wallpapers = json.load(file)
 
-    wallpapers[str(mon)] = str(random.choice(
-        list(wallpapers_folder.iterdir())))
+    wallpapers[str(mon)] = str(random.choice(list(wallpapers_folder.iterdir())))
 
     feh_command = _build_feh_command(list(wallpapers.values()))
 
@@ -78,13 +77,13 @@ if __name__ == "__main__":
     options = sys.argv[1:]
 
     match options:
-        case ["--set" | "-s"]:
+        case ["set" | "s"]:
             set_all_wallpapers()
 
-        case ["--remove" | "-r", mon]:
-            rm_wallpaper(mon)
+        case ["remove" | "r", screen]:
+            rm_wallpaper(screen)
 
-        case ["--help" | "-h"]:
+        case ["help" | "h"]:
             print(
                 "[--set or -s] to set wallpapers in all screens\n[--remove or -r + SCR] to remove wallpaper from SCR"
             )
