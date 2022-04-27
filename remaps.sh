@@ -10,7 +10,7 @@
 xset r rate 300 75
 
 # Map the caps lock key to control...
-setxkbmap -option ctrl:nocaps
+setxkbmap us,br -option ctrl:nocaps,grp:win_space_toggle
 
 # But when it is pressed only once, treat it as escape.
 killall xcape 2>/dev/null
