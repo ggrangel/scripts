@@ -25,7 +25,6 @@ PACMAN_PACKAGES=(
 	highlight # ccat alias
 	htop
 	kitty
-	klavaro  # touch typing tutor program
 	kvantum-qt5 # apply gtk themes to qt programs
 	lazygit
 	luarocks
@@ -64,7 +63,7 @@ PACMAN_PACKAGES=(
 	ueberzug # ranger preview image
 	unzip    # for :LspInstall
 	xautolock
-	xcape   # change keymaps
+	xcape # change keymaps
 	xclip
 	xdotool # simulates keyboard input and mouse activity
 	xorg-server
@@ -95,9 +94,9 @@ AUR_PACKAGES=(
 	slack-desktop
 	stylua
 	todotxt
-	toipe  # touch typing game
+	toipe # touch typing game
 	whatsapp-nativefier
-	vocage  # flashcard terminal-based app
+	vocage # flashcard terminal-based app
 )
 
 PYTHON_PACKAGES=(
