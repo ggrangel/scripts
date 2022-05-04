@@ -3,7 +3,6 @@
 # This script does the following:
 # 1. install pacman, aur and pip packages
 # 2. install pyenv
-# 3. setup git configuration
 # 4. clone github repositories
 # 5. install nvim's packer
 # 6. change default shell to zsh
@@ -15,6 +14,7 @@ PACMAN_PACKAGES=(
 	base-devel
 	cmatrix
 	# codespell
+	delta-git # a syntax-highlighting pager for git (used with lazygit)
 	dmenu
 	feh
 	figlet
@@ -151,15 +151,13 @@ install_pip_packages() {
 	done
 }
 
-setup_git() {
-	git config --global user.email "gustavorangel91@gmail.com"
-	git config --global user.name "Gustavo Rangel"
-	git config advice.addIgnoredFile false
-}
-
 setup_vim() {
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-	# nvim --headless +PackerSync +qa
+}
+
+setup_tmux() {
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	# prefix + I will install plugins
 }
 
 upgrade_and_clean_system() {
@@ -187,12 +185,13 @@ setup_repos() {
 
 # ========== ========== ========== ========== functions call
 
+install_paru
 install_pacman_packages
 install_AUR_packages
 install_pyenv
 install_pip_packages
-setup_git
 setup_vim
+setup_tmux
 change_shell
 gtk_theming
 ssh_key
