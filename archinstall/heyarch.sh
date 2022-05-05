@@ -121,7 +121,7 @@ PIP_PACKAGES=(
 install_pacman_packages() {
 	# sudo pacman -S "${PACMAN_PACKAGES[@]}" --noconfirm
 	for package in "${PACMAN_PACKAGES[@]}"; do
-		sudo pacman -S package --noconfirm
+		sudo pacman -S "$package" --noconfirm
 	done
 }
 
@@ -134,7 +134,7 @@ install_paru() {
 install_AUR_packages() {
 	# sudo paru -S "${AUR_PACKAGES[@]}" --noconfirm
 	for package in "${AUR_PACKAGES[@]}"; do
-		paru -S package --noconfirm
+		paru -S "$package" --noconfirm
 	done
 
 }
