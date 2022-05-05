@@ -14,7 +14,7 @@ PACMAN_PACKAGES=(
 	base-devel
 	cmatrix
 	# codespell
-	delta-git # a syntax-highlighting pager for git (used with lazygit)
+	git-delta # a syntax-highlighting pager for git (used with lazygit)
 	dmenu
 	feh
 	figlet
@@ -119,7 +119,10 @@ PIP_PACKAGES=(
 # ========== ========== ========== ========== functions definition
 
 install_pacman_packages() {
-	sudo pacman -S "${PACMAN_PACKAGES[@]}" --noconfirm
+	# sudo pacman -S "${PACMAN_PACKAGES[@]}" --noconfirm
+	for package in "${PACMAN_PACKAGES[@]}"; do
+		sudo pacman -S package --noconfirm
+	done
 }
 
 install_paru() {
@@ -129,7 +132,11 @@ install_paru() {
 }
 
 install_AUR_packages() {
-	sudo pacman -S "${AUR_PACKAGES[@]}" --noconfirm
+	# sudo paru -S "${AUR_PACKAGES[@]}" --noconfirm
+	for package in "${AUR_PACKAGES[@]}"; do
+		paru -S package --noconfirm
+	done
+
 }
 
 install_pyenv() {
@@ -185,15 +192,15 @@ setup_repos() {
 
 # ========== ========== ========== ========== functions call
 
-install_paru
+# install_paru
 install_pacman_packages
 install_AUR_packages
-install_pyenv
-install_pip_packages
-setup_vim
-setup_tmux
-change_shell
-gtk_theming
-ssh_key
-setup_repos
-upgrade_and_clean_system
+# install_pyenv
+# install_pip_packages
+# setup_vim
+# setup_tmux
+# change_shell
+# gtk_theming
+# ssh_key
+# setup_repos
+# upgrade_and_clean_system
