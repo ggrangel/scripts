@@ -8,9 +8,16 @@ function run {
 	fi
 }
 
+hostName=$(cat /etc/hostname)
+
 python ~/scripts/wallpapers.py set &
 sh ~/scripts/remaps.sh &
-run sxhkd -c ~/.config/sxhkdrc &
+run sxhkd -c ~/.config/sxhkd/sxhkdrc &
+if [[ $hostName == "core" ]]; then
+	run sxhkd -c ~/.config/sxhkd/sxhkdrc.core &
+elif [[ $hostName == "aux" ]]; then
+	run sxhkd -c ~/.config/sxhkd/sxhkdrc.aux &
+fi
 picom --config ~/.config/picom.conf &
 redshift -P -O 5000
 insync start &
