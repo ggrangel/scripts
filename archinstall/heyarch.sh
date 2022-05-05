@@ -1,11 +1,5 @@
 #!/usr/bin/bash
 
-# This script does the following:
-# 1. install pacman and aur packages
-# 2. change default shell to zsh
-
-# ========== ========== ========== ========== global variables
-
 PACMAN_PACKAGES=(
 	awesome
 	base-devel
@@ -53,6 +47,7 @@ PACMAN_PACKAGES=(
 	sxhkd
 	sxiv # project archived. consider migrating to nsxiv later on
 	telegram-desktop
+	tldr
 	tmux
 	ttf-dejavu
 	ttf-liberation
@@ -96,10 +91,7 @@ AUR_PACKAGES=(
 	vocage # flashcard terminal-based app
 )
 
-# ========== ========== ========== ========== functions definition
-
 install_pacman_packages() {
-	# sudo pacman -S "${PACMAN_PACKAGES[@]}" --noconfirm
 	for package in "${PACMAN_PACKAGES[@]}"; do
 		sudo pacman -S "$package" --noconfirm
 	done
@@ -112,16 +104,10 @@ install_paru() {
 }
 
 install_AUR_packages() {
-	# sudo paru -S "${AUR_PACKAGES[@]}" --noconfirm
 	for package in "${AUR_PACKAGES[@]}"; do
 		paru -S "$package" --noconfirm
 	done
 
-}
-
-setup_tmux() {
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-	# prefix + I will install plugins
 }
 
 upgrade_and_clean_system() {
@@ -129,28 +115,7 @@ upgrade_and_clean_system() {
 	sudo pacman -Scc --noconfirm # clean cache
 }
 
-change_shell() {
-	chsh -s "$(which zsh)"
-}
-
-gtk_theming() {
-	sudo cp -a ./themes/Material-Black-Blueberry/ /usr/share/themes/
-	sudo cp -a ./icons/Material-Black-Blueberry-Suru/ /usr/share/icons/
-}
-
-ssh_key() {
-	ssh-keygen
-}
-
-# ========== ========== ========== ========== functions call
-
-# install_paru
+install_paru
 install_pacman_packages
 install_AUR_packages
-# setup_vim
-# setup_tmux
-# change_shell
-# gtk_theming
-# ssh_key
-# setup_repos
-# upgrade_and_clean_system
+upgrade_and_clean_system
