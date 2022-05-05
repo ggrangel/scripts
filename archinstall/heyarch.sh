@@ -1,11 +1,8 @@
 #!/usr/bin/bash
 
 # This script does the following:
-# 1. install pacman, aur and pip packages
-# 2. install pyenv
-# 4. clone github repositories
-# 5. install nvim's packer
-# 6. change default shell to zsh
+# 1. install pacman and aur packages
+# 2. change default shell to zsh
 
 # ========== ========== ========== ========== global variables
 
@@ -99,23 +96,6 @@ AUR_PACKAGES=(
 	vocage # flashcard terminal-based app
 )
 
-PYTHON_PACKAGES=(
-	pyright
-	python-black
-	python-isort
-)
-
-PIP_PACKAGES=(
-	## Linters
-	# flake8     # general
-	# bandit     # security flaws
-	# mypy       # typehints
-	# pydocstyle # documentation
-	## Fixers
-	black # general
-	isort # imports
-)
-
 # ========== ========== ========== ========== functions definition
 
 install_pacman_packages() {
@@ -139,29 +119,6 @@ install_AUR_packages() {
 
 }
 
-install_pyenv() {
-	curl https://pyenv.run | bash
-}
-
-install_python_packages() {
-	sudo pacman -S "${PYTHON_PACKAGES[@]}" --noconfirm
-}
-
-install_pip_packages() {
-	venv=core
-	pyenv virtualenv $venv
-	venvPath=$HOME/.pyenv/versions/$venv/bin/python
-	$venvPath -m pip install --upgrade pip
-
-	for package in "${PIP_PACKAGES[@]}"; do
-		$venvPath -m pip install "$package"
-	done
-}
-
-setup_vim() {
-	git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-}
-
 setup_tmux() {
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	# prefix + I will install plugins
@@ -173,7 +130,7 @@ upgrade_and_clean_system() {
 }
 
 change_shell() {
-	chsh -s /bin/zsh
+	chsh -s "$(which zsh)"
 }
 
 gtk_theming() {
@@ -185,18 +142,11 @@ ssh_key() {
 	ssh-keygen
 }
 
-setup_repos() {
-	git clone git@github.com:gustavobrangel/dotfiles.git "$HOME/"
-	git clone git@github.com:gustavobrangel/scripts.git "$HOME/.config"
-}
-
 # ========== ========== ========== ========== functions call
 
 # install_paru
 install_pacman_packages
 install_AUR_packages
-# install_pyenv
-# install_pip_packages
 # setup_vim
 # setup_tmux
 # change_shell
