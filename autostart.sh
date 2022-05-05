@@ -9,8 +9,8 @@ function run {
 }
 
 python ~/scripts/wallpapers.py set &
-run sxhkd -c ~/.config/sxhkdrc &
 sh ~/scripts/remaps.sh &
+run sxhkd -c ~/.config/sxhkdrc &
 picom --config ~/.config/picom.conf &
 redshift -P -O 5000
 insync start &
