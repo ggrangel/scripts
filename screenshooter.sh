@@ -6,11 +6,7 @@
 defaultFolder="$HOME/tmp/screenshots/"
 defaultName=$(date +%s)
 
-# name=$(echo "$defaultName" | dmenu -fn "" -p "Rename SS?")
-
-# if [[ $name == "" ]]; then
-# 	exit 1
-# fi
+mkdir -p "$defaultFolder"
 
 imagePath="$defaultFolder/$defaultName".png
 
