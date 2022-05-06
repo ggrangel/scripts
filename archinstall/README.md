@@ -92,3 +92,16 @@ Next time you log in, these changes will be visible
 ## Colored pacman
 
 - Uncomment the "Color" line in `/etc/pacman.conf`
+
+# Laptop-specific
+
+- To control screen brightness
+```shell
+$ pacman -S brightnessctl
+```
+
+- For battery indicator instant updates (awesomeWM battery widget)
+```shell
+pacman -S acpid
+systemctl enable acpid
+```
