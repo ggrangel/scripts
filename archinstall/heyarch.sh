@@ -1,4 +1,16 @@
 #!/usr/bin/bash
+#
+# Installs paru, pacman packages and AUR packages
+#
+# Usage:
+#
+# ```sh
+# $ ./heyarch.sh
+# ```
+#
+# Dependencies:
+#
+# git
 
 PACMAN_PACKAGES=(
 	awesome
@@ -10,10 +22,8 @@ PACMAN_PACKAGES=(
 	feh
 	figlet
 	fzf # used by zoxide
-	git
 	github-cli
-	go        # for vim-hexokinase
-	highlight # ccat alias
+	go # for vim-hexokinase
 	htop
 	kitty
 	kvantum-qt5 # apply gtk themes to qt programs
@@ -31,7 +41,6 @@ PACMAN_PACKAGES=(
 	pcmanfm # sometimes it is useful
 	picom
 	prettier
-	psutils
 	pulsemixer
 	pyenv
 	python-pip
@@ -88,7 +97,8 @@ AUR_PACKAGES=(
 	todotxt
 	toipe # touch typing game
 	whatsapp-nativefier
-	vocage # flashcard terminal-based app
+	vocage  # flashcard terminal-based app
+	volnoti # volume notification
 )
 
 install_pacman_packages() {

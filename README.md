@@ -1,2 +1,2 @@
 # scripts
-Scripts to help running my system.
+- Check each script code invidually for information on usage and dependencies.

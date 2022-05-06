@@ -1,11 +1,21 @@
 #!/bin/bash
-
-# Check status of my github repos
+#
+# Checks the status of my main github repos
+#
+# Usage:
+#
+# ```sh
+# $ ./gh-repos.sh
+# ```
+#
+# Dependencies:
+#
+# git
 
 REPOS=(
-	"/home/rangelgbr/.password-store/"
-	"/home/rangelgbr/.config/"
-	"/home/rangelgbr/scripts/"
+	"$HOME/.password-store/"
+	"$HOME/.config/"
+	"$HOME/scripts/"
 )
 
 for repo in "${REPOS[@]}"; do

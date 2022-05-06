@@ -1,4 +1,18 @@
 #!/bin/python
+#
+# Sets a random wallpaper to all screens. Also, permanently deletes a wallpaper that's set on a screen.
+#
+# Usage:
+#
+# ```sh
+# $ ./wallpaper.py set
+# $ ./wallpaper.py remove <screen_nr>
+# ```
+#
+# Dependencies:
+#
+# None
+
 
 import json
 import os

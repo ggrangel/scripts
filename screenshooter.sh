@@ -1,16 +1,24 @@
 #!/bin/bash
-
-# This script is called to take a screenshot of all the screens, a specific region or a window.
-# There are sxhkd's keybindings to all its options
+#
+# Screenshoot a region, window or all screens, save it to a folder and copy it to clipboard
+#
+# Usage:
+#
+# ```sh
+# $ ./screenshooter.sh select
+# $ ./screenshooter.sh window
+# $ ./screenshooter.sh screen
+# ```
+#
+# Dependencies:
+#
+# maim
+# xclip
 
 defaultFolder="$HOME/tmp/screenshots/"
 defaultName=$(date +%s)
 
-# name=$(echo "$defaultName" | dmenu -fn "" -p "Rename SS?")
-
-# if [[ $name == "" ]]; then
-# 	exit 1
-# fi
+mkdir -p "$defaultFolder"
 
 imagePath="$defaultFolder/$defaultName".png
 

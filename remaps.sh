@@ -1,9 +1,20 @@
 #!/bin/sh
 
 # This script is called on startup to:
-# 1. increase the key rate speed
-# 2. change the behaviour of the caps lock key: map it to escape, but when it's pressed alongside another key, it's mapped to control
-# 2. map the right alt to the super key.
+# - increase the key rate speed
+# - set the main keyboard layout to us colemak.
+# - binds super + space to toggle to br qwerty.
+# - change the behaviour of the caps lock key: map it to escape, but when it's pressed alongside another key, it's mapped to control
+# - map the right alt to the super key.
+#
+# Usage:
+#
+# Called by autostart.sh.
+# No need to run it manually.
+#
+# Dependencies:
+#
+# xcape
 
 # Increase key speed via a rate change.
 # xset r rate [delay] [rate]
