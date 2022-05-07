@@ -3,12 +3,12 @@
 ## Load keyboard
 
 ```shell
-$ loadkeys us colemak
+ loadkeys us colemak
 ```
 
 ## Configure wifi (skip if using cable):
   ```shell
-    $ iwctl
+     iwctl
   ```
 
   - follow the interactive instructions using the following commands (mind the order):
@@ -28,8 +28,8 @@ $ loadkeys us colemak
   
 ## Install Arch:
   ```shell
-  $ pacman -Sy python-archinstall
-  $ python -m archinstall
+   pacman -Sy python-archinstall
+   python -m archinstall
   ```
   - follow the interactive instructions.
   - after install, reboot without livemedia
@@ -37,37 +37,32 @@ $ loadkeys us colemak
 ## Install packages
 
     ```shell
-    $ bash heyarch.sh
+     bash heyarch.sh
     ```
     
 ## ZSH as default shell
 
 ```shell
-$ chsh -s $(which zsh)
+ chsh -s $(which zsh)
 ```
 
 ## SSH key
 
 ```shell
-$ ssh-keygen
-```
-
-If you don't want to type your password every time, create the file `$HOME/.ssh/config` and add the folloing line
-```
-AddKeysToAgent yes
+ ssh-keygen
 ```
 
 ## Setup tmux
 ```shell
-$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
-Then, start tmux and press `prefix + I`
+Then, start tmux and press `prefix + I` to install the plugins listed in tmux conf file
 
 ## GTK Theming
 
 I use *Material Black Colors*, theme is [here](https://www.gnome-look.org/p/1316887/) and the matching icons are [here](https://www.pling.com/p/1333360/).
 
-Once the're downloaded, unzip them and
+Once they're downloaded, unzip them and
 
 ```shell
 sudo mv Material-Black-Blueberry /usr/share/themes
@@ -97,7 +92,7 @@ Next time you log in, these changes will be visible
 
 - To control screen brightness
 ```shell
-$ pacman -S brightnessctl
+ pacman -S brightnessctl
 ```
 
 - For battery indicator instant updates (awesomeWM battery widget)
