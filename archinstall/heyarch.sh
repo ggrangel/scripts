@@ -17,39 +17,31 @@ PACMAN_PACKAGES=(
 	base-devel
 	cmatrix
 	# codespell
-	git-delta # a syntax-highlighting pager for git (used with lazygit)
+	git-delta # a syntax-highlighting pager for git
 	dmenu
 	feh
-	figlet
+	# figlet
 	fzf # used by zoxide
 	github-cli
-	go # for vim-hexokinase
 	htop
 	kitty
 	kvantum-qt5 # apply gtk themes to qt programs
 	lazygit
-	luarocks
 	# lxsession   # policy kit authentication agent (for apps like gparted and etcher)
 	maim
 	ncdu # sort and list disk usage by size
 	neofetch
 	neovim
 	noto-fonts
-	npm # required by LspInstall
-	numlockx
+	# numlockx
 	pass
 	pcmanfm # sometimes it is useful
 	picom
-	prettier
 	pulsemixer
-	pyenv
-	python-pip
 	ranger
 	redshift
 	rofi
 	rsync
-	shellcheck
-	shfmt
 	slack-desktop
 	slock
 	stow
@@ -60,7 +52,7 @@ PACMAN_PACKAGES=(
 	tmux
 	ttf-dejavu
 	ttf-liberation
-	udisks2
+	udisks2  # avoids having to type sudo pass with bashmount
 	ueberzug # ranger preview image
 	unzip    # for :LspInstall
 	xautolock
@@ -83,7 +75,7 @@ AUR_PACKAGES=(
 	balena-etcher
 	bashmount
 	brave-bin
-	colorpicker
+	# colorpicker
 	devour
 	dtrx # extract compressed files
 	hollywood
@@ -93,7 +85,6 @@ AUR_PACKAGES=(
 	redshift-minimal # change screen temperature
 	sc-im
 	slack-desktop
-	stylua
 	todotxt
 	toipe # touch typing game
 	whatsapp-nativefier

@@ -1,9 +1,22 @@
 #!/usr/bin/bash
 
-PYTHON_PACKAGES=(
+PACMAN_PACKAGES=(
 	pyright
 	python-black
 	python-isort
+	prettier
+	shellcheck
+	shfmt
+	go # for vim-hexokinase
+	pyenv
+	python-pip
+	npm # required by LspInstall
+	luarocks
+)
+
+AUR_PACKAGES=(
+	nvm
+	stylua
 )
 
 PIP_PACKAGES=(
@@ -12,15 +25,7 @@ PIP_PACKAGES=(
 	# bandit     # security flaws
 	# mypy       # typehints
 	# pydocstyle # documentation
-	## Fixers
-	black # general
-	isort # imports
 )
-
-
-install_pyenv() {
-	curl https://pyenv.run | bash
-}
 
 install_python_packages() {
 	sudo pacman -S "${PYTHON_PACKAGES[@]}" --noconfirm
@@ -36,4 +41,3 @@ install_pip_packages() {
 		$venvPath -m pip install "$package"
 	done
 }
-
