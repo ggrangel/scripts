@@ -96,7 +96,8 @@ Next time you log in, these changes will be visible
 ```
 
 - For battery indicator instant updates (awesomeWM battery widget)
+
 ```shell
-pacman -S acpid
-systemctl enable acpid
+git clone git@github.com:streetturtle/awesome-wm-widgets.git
+pacman -S acpi
 ```

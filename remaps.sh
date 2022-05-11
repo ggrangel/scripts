@@ -2,7 +2,6 @@
 
 # This script is called on startup to:
 # - increase the key rate speed
-# - set the main keyboard layout to us colemak.
 # - binds super + space to toggle to br qwerty.
 # - change the behaviour of the caps lock key: map it to escape, but when it's pressed alongside another key, it's mapped to control
 # - map the right alt to the super key.
@@ -21,7 +20,7 @@
 xset r rate 300 75
 
 # Map the caps lock key to control...
-setxkbmap us,br -variant colemak, -option ctrl:nocaps,grp:win_space_toggle
+setxkbmap us,br -option ctrl:nocaps,grp:win_space_toggle
 
 # But when it is pressed only once, treat it as escape.
 killall xcape 2>/dev/null
