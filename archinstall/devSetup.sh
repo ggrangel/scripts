@@ -3,7 +3,7 @@
 PACMAN_PACKAGES=(
 	go # for vim-hexokinase
 	luarocks
-	npm # required by LspInstall
+	npm
 	postgresql-libs
 	prettier
 	pyenv
