@@ -5,9 +5,7 @@ PACMAN_PACKAGES=(
 	luarocks
 	npm
 	postgresql-libs
-	prettier
 	pyenv
-	pyright
 	python-black
 	python-isort
 	python-pip
@@ -24,8 +22,8 @@ AUR_PACKAGES=(
 
 NPM_PACKAGES=(
 	prettier_standard
-	typescript
-	typescript-language-server
+	# typescript
+	# typescript-language-server
 )
 
 PIP_PACKAGES=(
@@ -56,13 +54,7 @@ install_NPM_packages() {
 }
 
 install_pip_packages() {
-	# venv=core
-	# pyenv virtualenv $venv
-	# venvPath=$HOME/.pyenv/versions/$venv/bin/python
-	# $venvPath -m pip install --upgrade pip
-
 	for package in "${PIP_PACKAGES[@]}"; do
-		# $venvPath -m pip install "$package"
 		pip install "$package"
 	done
 }

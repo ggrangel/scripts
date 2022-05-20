@@ -1,11 +1,5 @@
 # Installing Arch
 
-## Load keyboard
-
-```shell
- loadkeys us colemak
-```
-
 ## Configure wifi (skip if using cable):
   ```shell
      iwctl
@@ -32,6 +26,7 @@
    python -m archinstall
   ```
   - follow the interactive instructions.
+  - if you're depending on wifi, remember to install upfront a package like `networkmanager` to handle networks.
   - after install, reboot without livemedia
 
 ## Install packages
@@ -46,7 +41,15 @@
  chsh -s $(which zsh)
 ```
 
+- Create a new file called `zshenv` in `/etc/zsh/` and add the following line
+
+```shell
+  ZDOTDIR=$HOME/.config/zsh/
+```
+
 ## SSH key
+
+- Generate a new SSH key for your computer.
 
 ```shell
  ssh-keygen
@@ -68,20 +71,6 @@ Once they're downloaded, unzip them and
 sudo mv Material-Black-Blueberry /usr/share/themes
 sudo mv Material-Black-Blueberry-Suru /usr/share/icons
 ```
-
-Now edit **~/.gtkrc-2.0** and **~/.config/gtk-3.0/settings.ini** by adding
-these lines:
-
-```ini
-# ~/.gtkrc-2.0
-gtk-theme-name = "Material-Black-Blueberry"
-gtk-icon-theme-name = "Material-Black-Blueberry-Suru"
-
-# ~/.config/gtk-3.0/settings.ini
-gtk-theme-name = Material-Black-Blueberry
-gtk-icon-theme-name = Material-Black-Blueberry-Suru
-```
-
 Next time you log in, these changes will be visible
 
 ## Colored pacman
