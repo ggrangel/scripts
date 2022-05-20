@@ -55,6 +55,7 @@ PACMAN_PACKAGES=(
 	udisks2  # avoids having to type sudo pass with bashmount
 	ueberzug # ranger preview image
 	unzip    # for :LspInstall
+	wmctrl   # interacts with an X window manager
 	xautolock
 	xcape # change keymaps
 	xclip
