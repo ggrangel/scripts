@@ -21,6 +21,7 @@ PACMAN_PACKAGES=(
 	dmenu
 	feh
 	# figlet
+	fd  # better alternative to find
 	fzf # used by zoxide
 	github-cli
 	htop
