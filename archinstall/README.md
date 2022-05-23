@@ -55,6 +55,17 @@
  ssh-keygen
 ```
 
+- Avoid having to type the SSH passphrase every time.
+
+```shell
+  eval $(ssh-agent) # start the SSH agent
+  ssh-add ~/.ssh/id_rsa # add and save key permanently to the SSH agent
+```
+
+1. Start the SSH agent: `eval $(ssh-agent)`
+2. Ad
+
+
 ## Setup tmux
 ```shell
  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
