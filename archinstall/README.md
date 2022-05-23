@@ -77,6 +77,23 @@ Next time you log in, these changes will be visible
 
 - Uncomment the "Color" line in `/etc/pacman.conf`
 
+## Prompt only the password at login
+
+```shell
+sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
+```
+
+Cd to this directory, create a file called autologin.conf and add the following lines:
+
+```
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty -ino ggrangel %I 38400 linux
+```
+
+Then: `systemctl enable getty@tty1`
+
+
 # Laptop-specific
 
 - To control screen brightness
