@@ -21,7 +21,7 @@ PACMAN_PACKAGES=(
 	dmenu
 	feh
 	# figlet
-	fd  # better alternative to find
+	fd  # better alternative to find and a tree-sitter opt dependency
 	fzf # used by zoxide
 	github-cli
 	htop
