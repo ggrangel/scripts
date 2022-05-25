@@ -13,7 +13,7 @@
 # git
 
 REPOS=(
-	"$HOME/apps/pass/"
+	"$XDG_DATA_HOME/pass/"
 	"$HOME/.config/"
 	"$HOME/scripts/"
 )
