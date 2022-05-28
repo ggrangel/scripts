@@ -6,8 +6,6 @@ PACMAN_PACKAGES=(
 	npm
 	postgresql-libs
 	pyenv
-	python-black
-	python-isort
 	python-pip
 	shellcheck
 	shfmt
@@ -28,6 +26,8 @@ NPM_PACKAGES=(
 
 PIP_PACKAGES=(
 	## Linters
+	black
+	isort
 	flake8     # general
 	bandit     # security flaws
 	mypy       # typehints
