@@ -7,6 +7,7 @@ PACMAN_PACKAGES=(
 	postgresql-libs
 	pyenv
 	python-pip
+	rustup # rust toolchain installer (already comes with rustfmt)
 	shellcheck
 	shfmt
 	yarn
@@ -20,8 +21,6 @@ AUR_PACKAGES=(
 
 NPM_PACKAGES=(
 	prettier_standard
-	# typescript
-	# typescript-language-server
 )
 
 PIP_PACKAGES=(
@@ -57,4 +56,9 @@ install_pip_packages() {
 	for package in "${PIP_PACKAGES[@]}"; do
 		pip install "$package"
 	done
+}
+
+setup_rust() {
+	# install stable toolchain
+	rustup install stable
 }
