@@ -15,13 +15,14 @@
 PACMAN_PACKAGES=(
 	awesome
 	base-devel
+	bat # rust's alternative to cat
 	cmatrix
 	# codespell
 	git-delta # a syntax-highlighting pager for git
 	dmenu
 	feh
 	# figlet
-	fd  # better alternative to find and a tree-sitter opt dependency
+	fd  # rust's alternative to find
 	fzf # used by zoxide
 	github-cli
 	htop
@@ -41,6 +42,7 @@ PACMAN_PACKAGES=(
 	pulsemixer
 	ranger
 	redshift
+	ripgrep # rust's alternative to grep
 	rofi
 	rsync
 	slack-desktop
