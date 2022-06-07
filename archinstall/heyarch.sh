@@ -15,13 +15,10 @@
 PACMAN_PACKAGES=(
 	awesome
 	base-devel
-	bat # rust's alternative to cat
-	cmatrix
-	# codespell
+	bat       # rust's alternative to cat
 	git-delta # a syntax-highlighting pager for git
 	dmenu
 	feh
-	# figlet
 	fd  # rust's alternative to find
 	fzf # used by zoxide
 	github-cli
@@ -29,13 +26,11 @@ PACMAN_PACKAGES=(
 	kitty
 	kvantum-qt5 # apply gtk themes to qt programs
 	lazygit
-	# lxsession   # policy kit authentication agent (for apps like gparted and etcher)
 	maim
 	ncdu # sort and list disk usage by size
 	neofetch
 	neovim
 	noto-fonts
-	# numlockx
 	pass
 	pcmanfm # sometimes it is useful
 	picom
@@ -44,6 +39,7 @@ PACMAN_PACKAGES=(
 	redshift
 	ripgrep # rust's alternative to grep
 	rofi
+	rmlint # removes duplicate files (useful for the wallpaper folder)
 	rsync
 	slack-desktop
 	slock
@@ -82,7 +78,6 @@ AUR_PACKAGES=(
 	# colorpicker
 	devour
 	dtrx # extract compressed files
-	hollywood
 	insync
 	nerd-fonts-complete
 	nvim-packer-git
