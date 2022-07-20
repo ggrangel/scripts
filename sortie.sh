@@ -23,6 +23,7 @@ options=(
 	"Lock Screen"
 	"Restart AwesomeWM"
 	"Quit AwesomeWM"
+	"Suspend"
 	"Reboot"
 	"Shutdown"
 )
@@ -38,6 +39,9 @@ case $choice in
 	;;
 'Quit AwesomeWM')
 	awesome-client 'awesome.quit()'
+	;;
+'Suspend')
+	systemctl suspend
 	;;
 'Reboot')
 	shutdown now -r
