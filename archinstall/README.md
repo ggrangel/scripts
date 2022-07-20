@@ -104,6 +104,29 @@ ExecStart=-/sbin/agetty -ino ggrangel %I 38400 linux
 
 Then: `systemctl enable getty@tty1`
 
+## Lock machine before suspending it
+
+Cd to `/etc/systemd/system/`, create a file `lock.service` and add the lines below
+
+```
+[Unit]
+Description=Lock computer before suspending it
+Before=sleep.target
+
+[Service]
+User=ggrangel
+Type=oneshot
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/slock
+ExecStartPost=/usr/bin/sleep 1
+
+[Install]
+WantedBy=suspend.target
+```
+
+Note: As screen lockers may return before the screen is "locked", the screen may flash on resuming from suspend. Adding a small delay via `ExecStartPost=/usr/bin/sleep` 1 helps prevent this.
+
+Then: `systemctl enable lock.service`
 
 # Laptop-specific
 
