@@ -27,7 +27,7 @@ run sxhkd -c ~/.config/sxhkd/sxhkdrc &
 picom --config ~/.config/picom.conf &
 redshift -P -O 5000
 insync start &
-xautolock -time 60 -locker slock &
+xautolock -time 45 -locker "systemctl suspend"
 run volnoti &
 
 hostName=$(cat /etc/hostname)
