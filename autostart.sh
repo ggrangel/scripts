@@ -28,7 +28,7 @@ picom --config ~/.config/picom.conf &
 redshift -P -O 5000
 insync start &
 xautolock -time 45 -locker "systemctl suspend"
-run volnoti &
+volnoti &
 
 hostName=$(cat /etc/hostname)
 if [[ $hostName == "core" ]]; then
