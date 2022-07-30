@@ -42,7 +42,7 @@ PACMAN_PACKAGES=(
 	rmlint # removes duplicate files (useful for the wallpaper folder)
 	rsync
 	slack-desktop
-	slock
+	# slock
 	stow
 	sxhkd
 	sxiv # project archived. consider migrating to nsxiv later on
@@ -84,6 +84,7 @@ AUR_PACKAGES=(
 	redshift-minimal # change screen temperature
 	sc-im
 	slack-desktop
+	slock-fancy-git # slock is not working properly alongside suspension service
 	todotxt
 	toipe # touch typing game
 	whatsapp-nativefier
