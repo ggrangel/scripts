@@ -24,7 +24,8 @@ NPM_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-	## Linters
+	bpython # better repl
+	## Formatters and Linters
 	black
 	isort
 	flake8     # general
@@ -62,3 +63,9 @@ setup_rust() {
 	# install stable toolchain
 	rustup install stable
 }
+
+install_pacman_packages
+install_AUR_packages
+install_NPM_packages
+install_pip_packages
+setup_rust
