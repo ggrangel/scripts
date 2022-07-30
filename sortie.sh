@@ -32,7 +32,7 @@ choice=$(printf '%s\n' "${options[@]}" | rofi -dmenu -i -p 'Action')
 
 case $choice in
 'Lock Screen')
-	slock
+	i3lock-fancy
 	;;
 'Restart AwesomeWM')
 	awesome-client 'awesome.restart()'
