@@ -26,7 +26,7 @@
    python -m archinstall
   ```
   - follow the interactive instructions.
-  - if you're depending on wifi, remember to install upfront a package like `networkmanager` to handle networks.
+  - if you're depending on wifi, remember to install upfront the package `networkmanager` to handle networks.
   - after install, reboot without livemedia
 
 ## Install packages
@@ -55,16 +55,7 @@
  ssh-keygen
 ```
 
-- Avoid having to type the SSH passphrase every time.
-
-```shell
-  eval $(ssh-agent) # start the SSH agent
-  ssh-add ~/.ssh/id_rsa # add and save key permanently to the SSH agent
-```
-
-1. Start the SSH agent: `eval $(ssh-agent)`
-2. Ad
-
+- If you're using SSH to authenticate in github, remember to add your pub key in github's setting
 
 ## Setup tmux
 ```shell
@@ -117,11 +108,10 @@ Before=sleep.target
 User=ggrangel
 Type=oneshot
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/slock
-ExecStartPost=/usr/bin/sleep 1
+ExecStart=/usr/bin/i3lock-fancy
 
 [Install]
-WantedBy=suspend.target
+WantedBy=[suspend target]
 ```
 
 Note: As screen lockers may return before the screen is "locked", the screen may flash on resuming from suspend. Adding a small delay via `ExecStartPost=/usr/bin/sleep` 1 helps prevent this.
