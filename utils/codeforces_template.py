@@ -4,6 +4,10 @@ import sys
 if os.path.exists("XXXX_tests"):
     sys.stdin = open("XXXX_tests", "r")
 
+"""
+
+"""
+
 def solve():
     
     
