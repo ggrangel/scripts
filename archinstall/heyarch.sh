@@ -78,6 +78,7 @@ AUR_PACKAGES=(
 	# colorpicker
 	devour
 	dtrx # extract compressed files
+	i3lock-fancy-git
 	insync
 	nerd-fonts-complete
 	nvim-packer-git
