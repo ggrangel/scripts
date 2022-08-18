@@ -16,7 +16,7 @@
 # Dependencies:
 #
 # rofi
-# slock
+# i3lock-fancy
 # awesome
 
 options=(
