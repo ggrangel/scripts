@@ -20,36 +20,36 @@
 # awesome
 
 options=(
-	"Lock Screen"
-	"Restart AwesomeWM"
-	"Quit AwesomeWM"
-	"Suspend"
-	"Reboot"
-	"Shutdown"
+    "Lock Screen"
+    "Restart AwesomeWM"
+    "Quit AwesomeWM"
+    "Suspend System"
+    "Reboot System"
+    "Shutdown System"
 )
 
 choice=$(printf '%s\n' "${options[@]}" | rofi -dmenu -i -p 'Action')
 
 case $choice in
-'Lock Screen')
-	i3lock-fancy
-	;;
-'Restart AwesomeWM')
-	awesome-client 'awesome.restart()'
-	;;
-'Quit AwesomeWM')
-	awesome-client 'awesome.quit()'
-	;;
-'Suspend')
-	systemctl suspend
-	;;
-'Reboot')
-	shutdown now -r
-	;;
-'Shutdown')
-	shutdown now
-	;;
-*)
-	exit 0
-	;;
+    'Lock Screen')
+        i3lock-fancy
+        ;;
+    'Restart AwesomeWM')
+        awesome-client 'awesome.restart()'
+        ;;
+    'Quit AwesomeWM')
+        awesome-client 'awesome.quit()'
+        ;;
+    'Suspend')
+        systemctl suspend
+        ;;
+    'Reboot')
+        shutdown now -r
+        ;;
+    'Shutdown')
+        shutdown now
+        ;;
+    *)
+        exit 0
+        ;;
 esac
