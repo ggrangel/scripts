@@ -40,13 +40,13 @@ case $choice in
     'Quit AwesomeWM')
         awesome-client 'awesome.quit()'
         ;;
-    'Suspend')
+    'Suspend System')
         systemctl suspend
         ;;
-    'Reboot')
+    'Reboot System')
         shutdown now -r
         ;;
-    'Shutdown')
+    'Shutdown System')
         shutdown now
         ;;
     *)
