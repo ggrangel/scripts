@@ -71,7 +71,6 @@ PACMAN_PACKAGES=(
 )
 
 AUR_PACKAGES=(
-    balena-etcher
     bashmount
     brave-bin
     # colorpicker
