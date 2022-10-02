@@ -1,72 +1,77 @@
 #!/usr/bin/bash
 
-PACMAN_PACKAGES=(
-  aws-cli
-	go # for vim-hexokinase
-	luarocks
-	# npm
-	# postgresql-libs
-	# pyenv
-	python-pip
-	# rustup # rust toolchain installer (already comes with rustfmt)
-	shellcheck
-	shfmt
-	# yarn
-)
+setup_bash_env() {
+    pacmanPacks=(
+        shellcheck
+    )
+    pipPacks=(
+        beautysh
+    )
+    install_pip_packages "${pipPacks[@]}"
+}
 
-AUR_PACKAGES=(
-	# heroku-cli
-	# nvm
-	stylua
-)
+setup_lua_env() {
+    aurPacks=(
+        stylua
+    )
+    pacmanPacks=(
+        luarocks
+    )
 
-NPM_PACKAGES=(
-	prettier_standard
-)
+    install_AUR_packages "${aurPacks[@]}"
+    install_pacman_packages "${pacmanPacks[@]}"
+}
 
-PIP_PACKAGES=(
-	bpython # better repl
-	## Formatters and Linters
-	black
-	# isort
-	# flake8     # general
-	# bandit     # security flaws
-	# mypy       # typehints
-	# pydocstyle # documentation
-)
+setup_python_env() {
+    pacmanPacks=(
+        pyenv
+        python-pip
+    )
 
-install_pacman_packages() {
-	for package in "${PACMAN_PACKAGES[@]}"; do
-		sudo pacman -S "$package" --noconfirm
-	done
+    pipPacks=(
+        bpython # better repl
+        ## Formatters and Linters
+        black
+        isort
+        flake8     # general
+        bandit     # security flaws
+        mypy       # typehints
+        pydocstyle # documentation
+    )
+
+    install_pacman_packages "${pacmanPacks[@]}"
+    install_pip_packages "${pipPacks[@]}"
+}
+
+setup_rust_env() {
+    pacmanPacks=(
+        rustup
+    )
+    install_pacman_packages "${pacmanPacks[@]}"
+    # install stable toolchain
+    rustup install stable
 }
 
 install_AUR_packages() {
-	for package in "${AUR_PACKAGES[@]}"; do
-		paru -S "$package" --noconfirm
-	done
+    for package in $1; do
+        paru -S "$package" --noconfirm
+    done
 
 }
 
-install_NPM_packages() {
-	for package in "${NPM_PACKAGES[@]}"; do
-		sudo npm install -g "$package"
-	done
+install_pacman_packages() {
+    for package in $1; do
+        sudo pacman -S "$package" --noconfirm
+    done
 }
 
 install_pip_packages() {
-	for package in "${PIP_PACKAGES[@]}"; do
-		pip install "$package"
-	done
+    for package in $1; do
+        pip install "$package"
+    done
 }
 
-setup_rust() {
-	# install stable toolchain
-	rustup install stable
-}
-
-install_pacman_packages
-install_AUR_packages
-install_NPM_packages
-install_pip_packages
-# setup_rust
+setup_bash_env
+setup_lua_env
+setup_python_env
+setup_rust_env

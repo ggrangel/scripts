@@ -73,48 +73,49 @@ PACMAN_PACKAGES=(
 )
 
 AUR_PACKAGES=(
-	balena-etcher
-	bashmount
-	brave-bin
-	# colorpicker
-	devour
-	dtrx # extract compressed files
-	insync
-	nerd-fonts-complete
-	nvim-packer-git
-	redshift-minimal # change screen temperature
-	sc-im
-	slack-desktop
-	slock-fancy-git # slock is not working properly alongside suspension service
-	todotxt
-	toipe # touch typing game
-	whatsapp-nativefier
-	vocage  # flashcard terminal-based app
-	volnoti # volume notification
+    balena-etcher
+    bashmount
+    brave-bin
+    # colorpicker
+    devour
+    dtrx # extract compressed files
+    i3lock-fancy-git
+    insync
+    nerd-fonts-complete
+    nvim-packer-git
+    redshift-minimal # change screen temperature
+    sc-im
+    slack-desktop
+    slock-fancy-git # slock is not working properly alongside suspension service
+    todotxt
+    toipe # touch typing game
+    whatsapp-nativefier
+    vocage  # flashcard terminal-based app
+    volnoti # volume notification
 )
 
 install_pacman_packages() {
-	for package in "${PACMAN_PACKAGES[@]}"; do
-		sudo pacman -S "$package" --noconfirm
-	done
+    for package in "${PACMAN_PACKAGES[@]}"; do
+        sudo pacman -S "$package" --noconfirm
+    done
 }
 
 install_paru() {
-	git clone https://aur.archlinux.org/paru.git "$HOME/apps/paru"
-	cd "$HOME/apps/paru"
-	makepkg -si
+    git clone https://aur.archlinux.org/paru.git "$HOME/apps/paru"
+    cd "$HOME/apps/paru"
+    makepkg -si
 }
 
 install_AUR_packages() {
-	for package in "${AUR_PACKAGES[@]}"; do
-		paru -S "$package" --noconfirm
-	done
+    for package in "${AUR_PACKAGES[@]}"; do
+        paru -S "$package" --noconfirm
+    done
 
 }
 
 upgrade_and_clean_system() {
-	sudo pacman -Syu --noconfirm
-	sudo pacman -Scc --noconfirm # clean cache
+    sudo pacman -Syu --noconfirm
+    sudo pacman -Scc --noconfirm # clean cache
 }
 
 install_paru
