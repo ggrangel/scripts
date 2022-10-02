@@ -7,6 +7,7 @@ setup_bash_env() {
     pipPacks=(
         beautysh
     )
+    install_pacman_packages "${pacmanPacks[@]}"
     install_pip_packages "${pipPacks[@]}"
 }
 
@@ -32,11 +33,11 @@ setup_python_env() {
         bpython # better repl
         ## Formatters and Linters
         black
-        isort
-        flake8     # general
-        bandit     # security flaws
-        mypy       # typehints
-        pydocstyle # documentation
+        # isort
+        # flake8     # general
+        # bandit     # security flaws
+        # mypy       # typehints
+        # pydocstyle # documentation
     )
 
     install_pacman_packages "${pacmanPacks[@]}"
@@ -74,4 +75,4 @@ install_pip_packages() {
 setup_bash_env
 setup_lua_env
 setup_python_env
-setup_rust_env
+# setup_rust_env

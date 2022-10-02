@@ -13,41 +13,39 @@
 # git
 
 PACMAN_PACKAGES=(
-	awesome
+	awesome # window manager
+  aws-cli
 	base-devel
 	bat       # rust's alternative to cat
-	git-delta # a syntax-highlighting pager for git
+  git-delta # a syntax-highlighting pager for git (lazygit dependency)
 	dmenu
 	feh
 	fd  # rust's alternative to find
 	fzf # used by zoxide
 	github-cli
 	htop
-	kitty
+	kitty # terminal emulator
 	kvantum-qt5 # apply gtk themes to qt programs
-	lazygit
-	maim
+	lazygit # git simplified
+	maim # terminal screenshot application
 	ncdu # sort and list disk usage by size
-	neofetch
-	neovim
+	neofetch # command-line system information tool
+	neovim 
 	noto-fonts
 	pass
-	pcmanfm # sometimes it is useful
+	pcmanfm # GUI file manager: sometimes it is useful
 	picom
-	pulsemixer
+	pulsemixer # controls audio input and output
 	ranger
-	redshift
+	redshift # changes screen temperature
 	ripgrep # rust's alternative to grep
-	rofi
+  rofi # application launcher (dmenu alternative)
 	rmlint # removes duplicate files (useful for the wallpaper folder)
 	rsync
-	slack-desktop
-	# slock
-	stow
-	sxhkd
+	sxhkd # setup system shortcuts
 	sxiv # project archived. consider migrating to nsxiv later on
 	telegram-desktop
-	tldr
+	tldr # community-driven manual pages
 	tmux
   trash-cli
 	ttf-dejavu
@@ -68,7 +66,7 @@ PACMAN_PACKAGES=(
 	zathura
 	zathura-pdf-poppler
 	zoxide
-	zsh
+  zsh # smarter cd (like z and autojump)
 	zsh-syntax-highlighting
 )
 
@@ -77,20 +75,15 @@ AUR_PACKAGES=(
     bashmount
     brave-bin
     # colorpicker
-    devour
+    devour # terminal swallower
     dtrx # extract compressed files
     i3lock-fancy-git
     insync
     nerd-fonts-complete
     nvim-packer-git
-    redshift-minimal # change screen temperature
-    sc-im
-    slack-desktop
-    slock-fancy-git # slock is not working properly alongside suspension service
+    sc-im # terminal spreadsheet
+    # slock-fancy-git # slock is not working properly alongside suspension service
     todotxt
-    toipe # touch typing game
-    whatsapp-nativefier
-    vocage  # flashcard terminal-based app
     volnoti # volume notification
 )
 
