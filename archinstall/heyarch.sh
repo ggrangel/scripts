@@ -49,6 +49,7 @@ PACMAN_PACKAGES=(
 	telegram-desktop
 	tldr
 	tmux
+  trash-cli
 	ttf-dejavu
 	ttf-liberation
 	udisks2  # avoids having to type sudo pass with bashmount
