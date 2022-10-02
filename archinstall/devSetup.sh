@@ -1,21 +1,22 @@
 #!/usr/bin/bash
 
 PACMAN_PACKAGES=(
+  aws-cli
 	go # for vim-hexokinase
 	luarocks
-	npm
-	postgresql-libs
-	pyenv
+	# npm
+	# postgresql-libs
+	# pyenv
 	python-pip
-	rustup # rust toolchain installer (already comes with rustfmt)
+	# rustup # rust toolchain installer (already comes with rustfmt)
 	shellcheck
 	shfmt
-	yarn
+	# yarn
 )
 
 AUR_PACKAGES=(
-	heroku-cli
-	nvm
+	# heroku-cli
+	# nvm
 	stylua
 )
 
@@ -27,11 +28,11 @@ PIP_PACKAGES=(
 	bpython # better repl
 	## Formatters and Linters
 	black
-	isort
-	flake8     # general
-	bandit     # security flaws
-	mypy       # typehints
-	pydocstyle # documentation
+	# isort
+	# flake8     # general
+	# bandit     # security flaws
+	# mypy       # typehints
+	# pydocstyle # documentation
 )
 
 install_pacman_packages() {
@@ -68,4 +69,4 @@ install_pacman_packages
 install_AUR_packages
 install_NPM_packages
 install_pip_packages
-setup_rust
+# setup_rust
