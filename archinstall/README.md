@@ -31,9 +31,10 @@
 
 ## Install packages
 
-    ```shell
-     bash heyarch.sh
-    ```
+```shell
+bash heyarch.sh
+bash devSetup.sh
+```
     
 ## ZSH as default shell
 
