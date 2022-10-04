@@ -1,5 +1,13 @@
 #!/usr/bin/bash
 
+setup_general_env() {
+  pacmanPacks=(
+	    aws-cli
+        python-pip
+	)
+        install_pacman_packages "${pacmanPacks[@]}"
+}
+
 setup_bash_env() {
     pacmanPacks=(
         shellcheck
@@ -26,7 +34,6 @@ setup_lua_env() {
 setup_python_env() {
     pacmanPacks=(
         pyenv
-        python-pip
     )
 
     pipPacks=(
@@ -42,6 +49,8 @@ setup_python_env() {
 
     install_pacman_packages "${pacmanPacks[@]}"
     install_pip_packages "${pipPacks[@]}"
+    # for auto activation of virtual environments
+    git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 }
 
 setup_rust_env() {
@@ -72,7 +81,8 @@ install_pip_packages() {
     done
 }
 
+setup_general_env
 setup_bash_env
-setup_lua_env
 setup_python_env
+setup_lua_env
 # setup_rust_env

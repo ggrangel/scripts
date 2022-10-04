@@ -17,6 +17,7 @@ PACMAN_PACKAGES=(
   aws-cli
 	base-devel
 	bat       # rust's alternative to cat
+	openssh # for ssh-keygen
   git-delta # a syntax-highlighting pager for git (lazygit dependency)
 	dmenu
 	feh
