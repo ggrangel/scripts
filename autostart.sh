@@ -21,18 +21,18 @@ function run {
 	fi
 }
 
-python ~/scripts/wallpaper.py set &
 sh ~/scripts/remaps.sh &
-run sxhkd -c ~/.config/sxhkd/sxhkdrc &
+sxhkd -c ~/.config/sxhkd/sxhkdrc &
 picom --config ~/.config/picom.conf &
 redshift -P -O 5000
 insync start &
 xautolock -time 60 -locker "systemctl suspend"
 volnoti &
+python ~/scripts/wallpaper.py set &
 
 hostName=$(cat /etc/hostname)
 if [[ $hostName == "core" ]]; then
-	run sxhkd -c ~/.config/sxhkd/sxhkdrc.core &
+	sxhkd -c ~/.config/sxhkd/sxhkdrc.core &
 elif [[ $hostName == "aux" ]]; then
-	run sxhkd -c ~/.config/sxhkd/sxhkdrc.aux &
+	sxhkd -c ~/.config/sxhkd/sxhkdrc.aux &
 fi
