@@ -1,35 +1,35 @@
-# Installing Arch
+# Get your work environment ready
 
-## Configure wifi (skip if using cable):
-  ```shell
-     iwctl
-  ```
+## Installation
 
-  - follow the interactive instructions using the following commands (mind the order):
-  ```shell
-    device list
-    station <device> scan
-    station <device> get-networks
-    station <device> connect <network>
-    station <device> show
-    exit
-  ```
-  - if the device is powered off, to turn it on, run:
-    
-  ```shell
-    kill unblock all
-  ```
+```shell
+archinstall
+```
+
+Follow the interactive instructions.
+Remember to install the `networkmanager` alongside
+After install, reboot without livemedia
+
+### Configure wifi (skip if using cable):
+```shell
+iwctl
+```
+follow the interactive instructions using the following commands (mind the order):
+```shell
+device list
+station <device> scan
+station <device> get-networks
+station <device> connect <network>
+station <device> show
+exit
+```
+if the device is powered off, to turn it on, run:
+
+```shell
+kill unblock all
+```
   
-## Install Arch:
-- In a live archlinux environment, run the following command
-
-  ```shell
-  archinstall
-  ```
-  
-  - follow the interactive instructions.
-  - if you're depending on wifi, remember to install upfront the package `networkmanager` to handle networks.
-  - after install, reboot without livemedia
+## Setup
 
 ## Configure internet
 
@@ -38,13 +38,11 @@ systemctl start NetworkManager
 systemctl enable NetworkManager
 ```
 
-- note that the first command manually turns on the Network Manager but the second command makes it auto on boot
+note that the first command manually turns on the Network Manager but the second command makes it auto on boot
 
 ## Clone my projects
 
-- Install git: `pacman -Sy git`
-
-- Clone the scripts and the dotfiles projects
+Clone the scripts and the dotfiles projects
 
 ```shell
 git clone https://github.com/ggrangel/scripts.git
@@ -53,9 +51,11 @@ git clone https://github.com/ggrangel/dotfiles.git .config
 
 ## Clone third-party projects
 
-- Cd into `$HOME/apps`:
-- for automatic activation of python virtualenvs: `git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv`
-- checks $HOME for unwanted files and directories: `git clone https://github.com/b3nj5m1n/xdg-ninja.git`
+Cd into `$HOME/apps`:
+for automatic activation of python virtualenvs: `git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv`
+checks $HOME for unwanted files and directories: `git clone https://github.com/b3nj5m1n/xdg-ninja.git`
+tmux: `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+Then, start tmux and press `prefix + I` to install the plugins listed in tmux conf file
 
 ## Install packages
 
@@ -86,24 +86,6 @@ bash scripts/archinstall/devSetup.sh
 
 - If you're using SSH to authenticate in github, remember to add your pub key in github's setting
 
-## Setup tmux
-
-```shell
- git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-Then, start tmux and press `prefix + I` to install the plugins listed in tmux conf file
-
-## GTK Theming
-
-I use *Material Black Colors*, theme is [here](https://www.gnome-look.org/p/1316887/) and the matching icons are [here](https://www.pling.com/p/1333360/).
-
-Once they're downloaded, unzip them and
-
-```shell
-sudo mv Material-Black-Blueberry /usr/share/themes
-sudo mv Material-Black-Blueberry-Suru /usr/share/icons
-```
-Next time you log in, these changes will be visible
 
 ## Colored pacman
 
@@ -141,21 +123,46 @@ Environment=DISPLAY=:0
 ExecStart=/usr/bin/i3lock-fancy
 
 [Install]
-WantedBy=[suspend target]
+WantedBy=suspend.target
 ```
 
 Note: As screen lockers may return before the screen is "locked", the screen may flash on resuming from suspend. Adding a small delay via `ExecStartPost=/usr/bin/sleep` 1 helps prevent this.
 
 Then: `systemctl enable lock.service`
 
-# Laptop-specific
+## Configuring applications
 
-- To control screen brightness
+### Brave
+
+Join the sync chain and select the option to sync everything
+
+### Neovim
+
+1. In `init.lua`, comment every line or file that contains reference to plugins
+2. Save the `packer-setup.lua` file to install the plugins
+
+### GTK Theming
+
+I use *Material Black Colors*, theme is [here](https://www.gnome-look.org/p/1316887/) and the matching icons are [here](https://www.pling.com/p/1333360/).
+
+Once they're downloaded, unzip them and
+
+```shell
+sudo mv Material-Black-Blueberry /usr/share/themes
+sudo mv Material-Black-Blueberry-Suru /usr/share/icons
+```
+
+Make sure the folder name is the same as the settings in `~/.config/gtk-3.0/settings.ini` `~/.config/gtk-2.0/gtkrc` 
+Restart awesome to see the changes 
+
+### Laptop-specific
+
+To control screen brightness
 ```shell
  pacman -S brightnessctl
 ```
 
-- For battery indicator instant updates (awesomeWM battery widget)
+For battery indicator instant updates (awesomeWM battery widget)
 
 ```shell
 git clone git@github.com:streetturtle/awesome-wm-widgets.git
