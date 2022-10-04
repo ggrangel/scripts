@@ -21,19 +21,47 @@
   ```
   
 ## Install Arch:
+- In a live archlinux environment, run the following command
+
   ```shell
-   pacman -Sy python-archinstall
-   python -m archinstall
+  archinstall
   ```
+  
   - follow the interactive instructions.
   - if you're depending on wifi, remember to install upfront the package `networkmanager` to handle networks.
   - after install, reboot without livemedia
 
+## Configure internet
+
+```shell
+systemctl start NetworkManager
+systemctl enable NetworkManager
+```
+
+- note that the first command manually turns on the Network Manager but the second command makes it auto on boot
+
+## Clone my projects
+
+- Install git: `pacman -Sy git`
+
+- Clone the scripts and the dotfiles projects
+
+```shell
+git clone https://github.com/ggrangel/scripts.git
+git clone https://github.com/ggrangel/dotfiles.git .config
+```
+
+## Clone third-party projects
+
+- Cd into `$HOME/apps`:
+- for automatic activation of python virtualenvs: `git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv`
+- checks $HOME for unwanted files and directories: `git clone https://github.com/b3nj5m1n/xdg-ninja.git`
+
 ## Install packages
 
 ```shell
-bash heyarch.sh
-bash devSetup.sh
+bash scripts/archinstall/heyarch.sh
+bash scripts/archinstall/devSetup.sh
 ```
     
 ## ZSH as default shell
@@ -59,6 +87,7 @@ bash devSetup.sh
 - If you're using SSH to authenticate in github, remember to add your pub key in github's setting
 
 ## Setup tmux
+
 ```shell
  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
