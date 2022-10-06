@@ -41,7 +41,7 @@ case $choice in
         awesome-client 'awesome.quit()'
         ;;
     'Suspend System')
-        systemctl suspend
+        i3lock-fancy && systemctl suspend
         ;;
     'Reboot System')
         shutdown now -r
