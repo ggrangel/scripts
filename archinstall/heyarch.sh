@@ -17,22 +17,23 @@ PACMAN_PACKAGES=(
     aws-cli
     base-devel
     bat       # rust's alternative to cat
-    openssh # for ssh-keygen
-    git-delta # a syntax-highlighting pager for git (lazygit dependency)
     dmenu
-    feh
     fd  # rust's alternative to find
+    feh
     fzf # used by zoxide
+    git-delta # a syntax-highlighting pager for git (lazygit dependency)
     github-cli
     htop
     kitty # terminal emulator
     kvantum-qt5 # apply gtk themes to qt programs
     lazygit # git simplified
+    libnotify # for notify-send command
     maim # terminal screenshot application
     ncdu # sort and list disk usage by size
     neofetch # command-line system information tool
     neovim
     noto-fonts
+    openssh # for ssh-keygen
     pass
     pcmanfm # GUI file manager: sometimes it is useful
     picom
@@ -40,8 +41,8 @@ PACMAN_PACKAGES=(
     ranger
     redshift # changes screen temperature
     ripgrep # rust's alternative to grep
-    rofi # application launcher (dmenu alternative)
     rmlint # removes duplicate files (useful for the wallpaper folder)
+    rofi # application launcher (dmenu alternative)
     rsync
     sxhkd # setup system shortcuts
     sxiv # project archived. consider migrating to nsxiv later on
