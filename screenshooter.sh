@@ -16,25 +16,25 @@
 # xclip
 
 defaultFolder="$HOME/tmp/screenshots/"
-defaultName=$(date "+%d-%m-%y-%H_%M_%S")
+defaultName=$(date "+%y%m%d-%H_%M_%S")
 
 mkdir -p "$defaultFolder"
 
 imagePath="$defaultFolder$defaultName.png"
 
 case $1 in
-'screen')
-	maim "$imagePath"
-	;;
-'window')
-	maim -i "$(xdotool getactivewindow)" "$imagePath"
-	;;
-'select')
-	maim -s "$imagePath"
-	;;
-*)
-	exit 0
-	;;
+    'screen')
+        maim "$imagePath"
+        ;;
+    'window')
+        maim -i "$(xdotool getactivewindow)" "$imagePath"
+        ;;
+    'select')
+        maim -s "$imagePath"
+        ;;
+    *)
+        exit 0
+        ;;
 esac
 
 notify-send 'Screenshooter' "Screenshot saved to $imagePath"
