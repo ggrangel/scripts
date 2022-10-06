@@ -15,17 +15,25 @@
 # xautolock
 # volnoti
 
-sh ~/scripts/remaps.sh &
+# checks wether there is already an instance of the program with the same arguments
+# and only runs the program if there is none
+run() {
+    if ! pgrep -f "$1" ;
+    then
+        "$@"&
+    fi
+}
+
+~/scripts/remaps.sh &
 sxhkd -c ~/.config/sxhkd/sxhkdrc &
-picom --config ~/.config/picom.conf &
-redshift -P -O 5000
 python ~/scripts/wallpaper.py set &
-insync start &
-xautolock -time 60 -locker "systemctl suspend"
+picom --config ~/.config/picom.conf &
+redshift -P -O 5000 &
+xautolock -time 60 -locker "systemctl suspend" &
 volnoti &
 
 hostName=$(cat /etc/hostname)
-if [[ $hostName == "core" ]]; then
+if  [[ $hostName == "core" ]] ; then
     sxhkd -c ~/.config/sxhkd/sxhkdrc.core &
 elif [[ $hostName == "aux" ]]; then
     sxhkd -c ~/.config/sxhkd/sxhkdrc.aux &
