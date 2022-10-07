@@ -82,6 +82,8 @@ git clone https://github.com/streetturtle/awesome-wm-widgets.git ~/.config/aweso
 pacman -S acpi
 ```
 
+To disable internal speaker: `rmmod pcspkr`
+
 ## ZSH as default shell
 
 ```shell
