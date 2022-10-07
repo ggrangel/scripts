@@ -2,19 +2,13 @@
 
 ## Installation
 
-```shell
-archinstall
-```
-
-Follow the interactive instructions.
-Remember to install the `networkmanager` alongside
-After install, reboot without livemedia
-
 ### Configure wifi (skip if using cable):
 ```shell
 iwctl
 ```
-follow the interactive instructions using the following commands (mind the order):
+
+Follow the interactive instructions using the following commands (mind the order):
+
 ```shell
 device list
 station <device> scan
@@ -23,11 +17,30 @@ station <device> connect <network>
 station <device> show
 exit
 ```
-if the device is powered off, to turn it on, run:
+If the device is powered off, to turn it on, run:
 
 ```shell
-kill unblock all
+rfkill unblock all
 ```
+If your device doesn't get an IP address (shown in the `station <device> show` output), you must provide it with one using the Dynamic Host Configuration Protocol Client by running:
+
+```
+dhcpcd -d --waitip=4
+```
+
+### Install Arch
+
+```shell
+archinstall
+```
+Follow the interactive instructions. Non-obvious choices:
+1. Disk filesystem: ext4 (why not btrfs?)
+2. Encryption password: better set one for laptops
+3. Profile: xorg to install graphics drivers
+4. Audio: pulse audio (why not pipewire? What is alsa?)
+5. Additional packages: networkmanager git
+
+After install, reboot without livemedia
   
 ## Setup
 
@@ -37,8 +50,7 @@ kill unblock all
 systemctl start NetworkManager
 systemctl enable NetworkManager
 ```
-
-note that the first command manually turns on the Network Manager but the second command makes it auto on boot
+If you need to connect on a Wi-Fi network, run `nmtui`, that comes with the networkmanager package
 
 ## Clone my projects
 
@@ -48,21 +60,22 @@ Clone the scripts and the dotfiles projects
 git clone https://github.com/ggrangel/scripts.git
 git clone https://github.com/ggrangel/dotfiles.git .config
 ```
-
-## Clone third-party projects
-
-Cd into `$HOME/apps`:
-for automatic activation of python virtualenvs: `git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv`
-checks $HOME for unwanted files and directories: `git clone https://github.com/b3nj5m1n/xdg-ninja.git`
-tmux: `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
-Then, start tmux and press `prefix + I` to install the plugins listed in tmux conf file
-
 ## Install packages
 
 ```shell
 bash scripts/archinstall/heyarch.sh
 bash scripts/archinstall/devSetup.sh
 ```
+
+## Clone third-party projects
+
+For automatic activation of python virtualenvs: `git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv`
+
+To check $HOME for unwanted files and directories: `git clone https://github.com/b3nj5m1n/xdg-ninja.git ~/apps`
+
+tmux: `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+Then, start tmux and press `prefix + I` to install the plugins listed in tmux conf file
+
     
 ## ZSH as default shell
 
