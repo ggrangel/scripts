@@ -29,7 +29,7 @@ sxhkd -c ~/.config/sxhkd/sxhkdrc &
 python ~/scripts/wallpaper.py set &
 picom --config ~/.config/picom.conf &
 redshift -P -O 5000 &
-xautolock -time 60 -locker "systemctl suspend" &
+xautolock -time 60 -locker "i3lock-fancy && systemctl suspend" &
 volnoti &
 
 hostName=$(cat /etc/hostname)
