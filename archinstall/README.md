@@ -33,11 +33,12 @@ dhcpcd -d --waitip=4
 ```shell
 archinstall
 ```
+
 Follow the interactive instructions. Non-obvious choices:
-1. Disk filesystem: ext4 (why not btrfs?)
+1. Disk filesystem: ext4 (btrfs has better features, like the ability to take system' snapshots so we can recover them through GRUB. As I don't need it, I choose the most reliable one) 
 2. Encryption password: better set one for laptops
 3. Profile: xorg to install graphics drivers
-4. Audio: pulse audio (why not pipewire? What is alsa?)
+4. Audio: pulseaudio (the builtin audio system for linux is alsa, which is terrible to deal with. pipewire has better features, but I don't need them)
 5. Additional packages: networkmanager git
 
 After install, reboot without livemedia
