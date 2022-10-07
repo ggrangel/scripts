@@ -1,11 +1,13 @@
 #!/usr/bin/bash
 
 setup_general_env() {
-  pacmanPacks=(
-	    aws-cli
+    pacmanPacks=(
+        aws-cli
+        github-cli
+        tmux
         python-pip
-	)
-        install_pacman_packages "${pacmanPacks[@]}"
+    )
+    install_pacman_packages "${pacmanPacks[@]}"
 }
 
 setup_bash_env() {
@@ -40,7 +42,7 @@ setup_python_env() {
         bpython # better repl
         ## Formatters and Linters
         black
-        # isort
+        # isort      # alphabetically sort imports
         # flake8     # general
         # bandit     # security flaws
         # mypy       # typehints
@@ -50,7 +52,9 @@ setup_python_env() {
     install_pacman_packages "${pacmanPacks[@]}"
     install_pip_packages "${pipPacks[@]}"
     # for auto activation of virtual environments
-    git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+    pyenv_plugins_folder="$HOME/.local/share/pyenv/plugins"
+    mkdir -p "$pyenv_plugins_folder"
+    git clone https://github.com/pyenv/pyenv-virtualenv.git "$pyenv_plugins_folder"/pyenv-virtualenv
 }
 
 setup_rust_env() {
@@ -82,7 +86,7 @@ install_pip_packages() {
 }
 
 setup_general_env
-setup_bash_env
 setup_python_env
+setup_bash_env
 setup_lua_env
 # setup_rust_env

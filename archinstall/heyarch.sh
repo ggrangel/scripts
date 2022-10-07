@@ -14,7 +14,6 @@
 
 PACMAN_PACKAGES=(
     awesome             # window manager
-    aws-cli
     base-devel          # package group that includes tools for building packages
     bat                 # rust's alternative to cat
     dmenu               # dynamic menu (rofi dependency)
@@ -22,7 +21,6 @@ PACMAN_PACKAGES=(
     feh                 # sxiv is the default imageviewer. feh is used to set wallpapers
     fzf                 # used by zoxide
     git-delta           # a syntax-highlighting pager for git (lazygit dependency)
-    github-cli
     htop                # interactive process viewer
     kitty               # terminal emulator
     kvantum-qt5         # apply gtk themes to qt programs
@@ -48,11 +46,10 @@ PACMAN_PACKAGES=(
     sxiv                # project archived. consider migrating to nsxiv later on
     telegram-desktop
     tldr                # community-driven manual pages
-    tmux                # terminal multiplexer
     trash-cli           # using as an alias to rm
     ttf-dejavu          # set of fonts
     ttf-liberation      # set of fonts
-    udisks2             # avoids having to type sudo pass with bashmount
+    udisks2             # avoids having to type sudo password with bashmount
     ueberzug            # ranger preview image
     unzip               # for :LspInstall
     wmctrl              # interacts with an X window manager
