@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Runs all scripts and programs necessary at startug.
+# Runs scripts and programs at startup.
 #
 # Usage:
 # This is script is called by the WM at startup.
@@ -11,9 +11,11 @@
 # sxhkd
 # picom
 # redshift
-# insync
 # xautolock
 # volnoti
+#
+# Console output: PID of all the started process
+#
 
 # checks wether there is already an instance of the program with the same arguments
 # and only runs the program if there is none
@@ -25,16 +27,16 @@ run() {
 }
 
 ~/scripts/remaps.sh &
-sxhkd -c ~/.config/sxhkd/sxhkdrc &
+run sxhkd -c ~/.config/sxhkd/sxhkdrc &
 python ~/scripts/wallpaper.py set &
-picom --config ~/.config/picom.conf &
+run picom --config ~/.config/picom.conf &
 redshift -P -O 5000 &
-xautolock -time 60 -locker "i3lock-fancy && systemctl suspend" &
-volnoti &
+run xautolock -time 60 -locker "i3lock-fancy && systemctl suspend" &
+run volnoti &
 
 hostName=$(cat /etc/hostname)
 if  [[ $hostName == "core" ]] ; then
-    sxhkd -c ~/.config/sxhkd/sxhkdrc.core &
+    run sxhkd -c ~/.config/sxhkd/sxhkdrc.core &
 elif [[ $hostName == "aux" ]]; then
-    sxhkd -c ~/.config/sxhkd/sxhkdrc.aux &
+    run sxhkd -c ~/.config/sxhkd/sxhkdrc.aux &
 fi
