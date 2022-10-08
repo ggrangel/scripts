@@ -8,11 +8,12 @@
 #
 # Dependencies (all are optional):
 #
-# sxhkd
+# insync
 # picom
 # redshift
-# xautolock
+# sxhkd
 # volnoti
+# xautolock
 #
 # Console output: PID of all the started process
 #
@@ -27,12 +28,12 @@ run() {
 }
 
 ~/scripts/remaps.sh &
-run sxhkd -c ~/.config/sxhkd/sxhkdrc &
-python ~/scripts/wallpaper.py set &
+run sxhkd -c ~/.config/sxhkd/sxhkdrc & python ~/scripts/wallpaper.py set &
 run picom --config ~/.config/picom.conf &
 redshift -P -O 5000 &
 run xautolock -time 60 -locker "i3lock-fancy && systemctl suspend" &
 run volnoti &
+run insync start && sleep 5 && insync start # for some very weird reason, that's the only wait I got insync to work here
 
 hostName=$(cat /etc/hostname)
 if  [[ $hostName == "core" ]] ; then
