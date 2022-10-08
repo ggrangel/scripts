@@ -20,7 +20,7 @@
 xset r rate 300 75
 
 # Map the caps lock key to super.
-setxkbmap us,br -option caps:super,grp:ctrl_alt_toggle
+setxkbmap us,br -option caps:super,grp:lalt_lshift_toggle
 #setxkbmap us -option caps:super
 
 # But when it is pressed only once, treat it as escape.
