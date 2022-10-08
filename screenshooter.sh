@@ -38,4 +38,5 @@ case $1 in
 esac
 
 notify-send 'Screenshooter' "Screenshot saved to $imagePath"
-xclip -selection clipboard -t image/png -i "$imagePath"
+xclip -selection clipboard -t image/png -i "$imagePath" # copy image to clipboard
+printf "%s" "$imagePath" | xclip -selection primary # copy image path to primary clipboard (mouse middle click)
