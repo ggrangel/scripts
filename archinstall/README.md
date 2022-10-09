@@ -82,16 +82,16 @@ git clone https://github.com/streetturtle/awesome-wm-widgets.git ~/.config/aweso
 pacman -S acpi
 ```
 
-To disable internal speaker: `rmmod pcspkr`
+To immediately disable the internal speaker: `rmmod pcspkr`
+To avoid the module being loaded, permanently disabling it: `sh -c "echo blacklist pcspkr >> /etc/modprobe.d/backlist.conf`
 
 ## ZSH as default shell
 
 ```shell
  chsh -s $(which zsh)
+ sh -c "echo ZDOTDIR=$HOME/.config/zsh >> /etc/zsh/zshenv"
 ```
 
-Create a new file called `zshenv` in `/etc/zsh/` and add the following line `ZDOTDIR=$HOME/.config/zsh`. 
-  
 Update pacman and reboot.
 
 ## Clone third-party projects
@@ -118,7 +118,7 @@ Then, start tmux and press `prefix + I` to install the plugins listed in tmux co
 ## Prompt only the password at login
 
 ```shell
-sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
+ mkdir -p /etc/systemd/system/getty@tty1.service.d/
 ```
 
 Cd to this directory, create a file called autologin.conf and add the following lines:
@@ -150,8 +150,8 @@ I use *Material Black Colors*, theme is [here](https://www.gnome-look.org/p/1316
 Once they're downloaded, unzip them and run
 
 ```shell
-sudo mv Material-Black-Blueberry /usr/share/themes
-sudo mv Material-Black-Blueberry-Suru /usr/share/icons
+ mv Material-Black-Blueberry /usr/share/themes
+ mv Material-Black-Blueberry-Suru /usr/share/icons
 ```
 
 Make sure the folder name is the same as the settings in `~/.config/gtk-3.0/settings.ini` `~/.config/gtk-2.0/gtkrc` 
