@@ -16,7 +16,7 @@
 # xclip
 
 defaultFolder="$HOME/tmp/screenshots/"
-defaultName=$(date "+%y%m%d-%H_%M_%S")
+defaultName=$(date "+%Y%m%d-%H%M%S")
 
 mkdir -p "$defaultFolder"
 
