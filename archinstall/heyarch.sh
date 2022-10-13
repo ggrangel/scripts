@@ -57,6 +57,7 @@ PACMAN_PACKAGES=(
     xcape               # change keymaps
     xclip               # used by the screenshot script to copy image to clipboard
     xdotool             # simulates keyboard input and mouse activity
+    xorg-xev            # print contents of X events
     xorg-server         # implementation of the xorg
     xorg-xinit          # allows user to manually start an Xorg display server
     xorg-xkill          # forces the X server to close connections to client
