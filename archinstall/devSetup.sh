@@ -13,7 +13,7 @@ setup_general_env() {
 setup_bash_env() {
     pacmanPacks=(
         bash-language-server
-        shellcheck
+        shellharden
     )
     pipPacks=(
         beautysh
@@ -69,20 +69,20 @@ setup_rust_env() {
 }
 
 install_AUR_packages() {
-    for package in $1; do
+    for package in "$1"; do
         paru -S "$package" --noconfirm
     done
 
 }
 
 install_pacman_packages() {
-    for package in $1; do
+    for package in "$1"; do
         sudo pacman -S "$package" --noconfirm
     done
 }
 
 install_pip_packages() {
-    for package in $1; do
+    for package in "$1"; do
         pip install "$package"
     done
 }

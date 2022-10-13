@@ -91,8 +91,8 @@ install_pacman_packages() {
 }
 
 install_paru() {
-    git clone https://aur.archlinux.org/paru.git "$HOME/apps/paru"
-    cd "$HOME/apps/paru"
+    git clone https://aur.archlinux.org/paru.git "$HOME"/apps/paru
+    cd "$HOME"/apps/paru
     makepkg -si
 }
 
