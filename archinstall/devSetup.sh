@@ -29,6 +29,7 @@ setup_lua_env() {
     )
     pacmanPacks=(
         luarocks
+        lua-language-server
     )
 
     install_AUR_packages "${aurPacks[@]}"
