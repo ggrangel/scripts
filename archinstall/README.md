@@ -131,6 +131,38 @@ ExecStart=-/sbin/agetty -ino ggrangel %I 38400 linux
 
 Then: `systemctl enable getty@tty1`
 
+## Locking before suspend
+
+Create a file `lock.service` in the directory `/etc/system/system` and add the following:
+
+```
+[Unit]
+Description=Lock the screen before suspension
+Before=sleep.target
+ 
+[Service]
+User=ggrangel
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/slock
+ 
+[Install]
+WantedBy=sleep.target
+```
+
+Enable the service: `systemctl enable lock.service`
+
+## Closing lid (laptop-specifi)
+
+To suspend on lid closing, uncomment and edit the following lines on `/etc/systemd/logind.conf`:
+
+```shell
+HandleLidSwitch=suspend
+HandleLidSwitchDocked=suspend
+LidSwitchIgnoreInhibited=yes
+```
+
+To check if it's working as you'd like to, run: `journalctl -b -u systemd-logind`
+
 ## Configuring applications
 
 ### Brave

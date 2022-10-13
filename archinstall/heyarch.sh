@@ -43,6 +43,7 @@ PACMAN_PACKAGES=(
     ripgrep             # rust's alternative to grep
     rmlint              # removes duplicate files (useful for the wallpaper folder)
     rofi                # application launcher (dmenu alternative)
+    slock               # screen locker
     sxhkd               # setup system shortcuts
     sxiv                # project archived. consider migrating to nsxiv later on
     telegram-desktop
@@ -57,8 +58,8 @@ PACMAN_PACKAGES=(
     xcape               # change keymaps
     xclip               # used by the screenshot script to copy image to clipboard
     xdotool             # simulates keyboard input and mouse activity
-    xorg-xev            # print contents of X events
     xorg-server         # implementation of the xorg
+    xorg-xev            # print contents of X events
     xorg-xinit          # allows user to manually start an Xorg display server
     xorg-xkill          # forces the X server to close connections to client
     xorg-xrandr         # used by the wallpapers scripts to count the number of connected monitors
@@ -75,7 +76,6 @@ AUR_PACKAGES=(
     brave-bin           # web browser
     devour              # terminal swallower
     dtrx                # extract compressed files
-    i3lock-fancy-git    # screen locker
     insync              # sync local folder to google drive
     nerd-fonts-complete # set of nerd fonts
     nvim-packer-git     # nvim package manager
