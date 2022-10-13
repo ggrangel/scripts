@@ -15,9 +15,9 @@
 #
 # Dependencies:
 #
-# rofi
-# i3lock-fancy
 # awesome
+# rofi
+# slock
 
 options=(
     "Lock Screen"
@@ -32,7 +32,7 @@ choice=$(printf '%s\n' "${options[@]}" | rofi -dmenu -i -p 'Action')
 
 case $choice in
     'Lock Screen')
-        i3lock-fancy
+        slock
         ;;
     'Restart AwesomeWM')
         awesome-client 'awesome.restart()'
@@ -41,7 +41,7 @@ case $choice in
         awesome-client 'awesome.quit()'
         ;;
     'Suspend System')
-        i3lock-fancy && systemctl suspend
+        systemctl suspend
         ;;
     'Reboot System')
         shutdown now -r
