@@ -26,6 +26,7 @@ PACMAN_PACKAGES=(
     kvantum-qt5         # apply gtk themes to qt programs
     lazygit             # git simplified
     libnotify           # for notify-send command
+    lsd                 # ls deluxe
     maim                # terminal screenshot application
     mcfly               # search shell history
     ncdu                # sort and list disk usage by size
@@ -46,7 +47,6 @@ PACMAN_PACKAGES=(
     sxiv                # project archived. consider migrating to nsxiv later on
     telegram-desktop
     tldr                # community-driven manual pages
-    trash-cli           # using as an alias to rm
     ttf-dejavu          # set of fonts
     ttf-liberation      # set of fonts
     udisks2             # avoids having to type sudo password with bashmount
