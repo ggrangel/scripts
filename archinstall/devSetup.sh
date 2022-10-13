@@ -12,6 +12,7 @@ setup_general_env() {
 
 setup_bash_env() {
     pacmanPacks=(
+        bash-language-server
         shellcheck
     )
     pipPacks=(
@@ -36,6 +37,7 @@ setup_lua_env() {
 setup_python_env() {
     pacmanPacks=(
         pyenv
+        pyright
     )
 
     pipPacks=(
