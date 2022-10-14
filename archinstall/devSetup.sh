@@ -5,8 +5,9 @@ setup_general_env() {
         aws-cli
         github-cli
         npm # required by some nvim plugins
-        tmux
         python-pip
+        tmux
+        wget # required by mason.nvim
     )
     install_pacman_packages "${pacmanPacks[@]}"
 }
