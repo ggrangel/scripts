@@ -133,7 +133,7 @@ Then: `systemctl enable getty@tty1`
 
 ## Locking before suspend
 
-Create a file `lock.service` in the directory `/etc/system/system` and add the following:
+Create a file `lock.service` in the directory `/etc/systemd/system` and add the following:
 
 ```
 [Unit]
