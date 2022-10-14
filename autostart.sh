@@ -34,6 +34,7 @@ run picom --config ~/.config/picom.conf &
 redshift -P -O 5000 &
 run xautolock -time 60 -locker "systemctl suspend" &
 run volnoti &
+run telegram-desktop &
 run insync start && sleep 5 && insync start # for some very weird reason, that's the only wait I got insync to work here
 
 hostName=$(cat /etc/hostname)
