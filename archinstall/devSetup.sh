@@ -26,11 +26,11 @@ setup_bash_env() {
 
 setup_lua_env() {
     aurPacks=(
-        stylua
+        # stylua
     )
     pacmanPacks=(
         luarocks
-        lua-language-server
+        # lua-language-server
     )
 
     install_AUR_packages "${aurPacks[@]}"
@@ -72,26 +72,26 @@ setup_rust_env() {
 }
 
 install_AUR_packages() {
-    for package in "$1"; do
+    for package in $1; do
         paru -S "$package" --noconfirm
     done
 
 }
 
 install_pacman_packages() {
-    for package in "$1"; do
+    for package in $1; do
         sudo pacman -S "$package" --noconfirm
     done
 }
 
 install_pip_packages() {
-    for package in "$1"; do
+    for package in $1; do
         pip install "$package"
     done
 }
 
 setup_general_env
-setup_python_env
-setup_bash_env
-setup_lua_env
+# setup_python_env
+# setup_bash_env
+# setup_lua_env
 # setup_rust_env
