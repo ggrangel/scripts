@@ -103,17 +103,24 @@ Then, start tmux and press `prefix + I` to install the plugins listed in tmux co
 
 ## SSH key
 
-- Generate a new SSH key for your computer.
+Generate a new SSH key for your computer.
 
 ```shell
  ssh-keygen
 ```
 
-- If you're using SSH to authenticate in github, remember to add your pub key in github's setting
+If you're using SSH to authenticate in github, remember to add your pub key in github's setting
 
-## Colored pacman
+## Pacman
 
-- Uncomment the "Color" line in `/etc/pacman.conf`
+Enable parallel downloads: `sed -i 's/^ParallelDownloads = 5$/ParallelDownloads = 5/' /etc/pacman.conf` 
+Enable color: `sed -i 's/^#Color$/Color/' /etc/pacman.conf` 
+
+Enable weekly cache pacman cleanup: `systemctl enable paccache.timer`
+
+## Number of failed logins allowed
+
+To trigger the 10 min lockout after 10 failed logins attempt: `sed -i 's/^# deny = 3$/deny = 10/' /etc/security/faillock.conf`
 
 ## Prompt only the password at login
 
