@@ -116,7 +116,10 @@ If you're using SSH to authenticate in github, remember to add your pub key in g
 Enable parallel downloads: `sed -i 's/^ParallelDownloads = 5$/ParallelDownloads = 5/' /etc/pacman.conf` 
 Enable color: `sed -i 's/^#Color$/Color/' /etc/pacman.conf` 
 
-Enable weekly cache pacman cleanup: `systemctl enable paccache.timer`
+Enable weekly timer for pacman cache cleanup: `systemctl enable paccache.timer`
+
+Make reflector consider Brazil and Worldwide mirrors: `sed -i "s/^# --country France,Germany/--country Brazil,/" /etc/xdg/reflector/reflector.conf`
+Enable weekly timer for pacman mirrorlist update: `systemctl enable reflector.timer`
 
 ## Number of failed logins allowed
 

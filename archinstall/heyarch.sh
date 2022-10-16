@@ -34,13 +34,14 @@ PACMAN_PACKAGES=(
 	neovim              # i love you
 	noto-fonts          # set of fonts
 	openssh             # for ssh-keygen
-	pacman-contrib      # comes with the paccache.timer service
+	pacman-contrib      # ships with the paccache.timer
 	pass                # standard unix password manager
 	pcmanfm             # GUI file manager: sometimes it is useful
 	picom               # standalone compositor for Xorg
 	pulsemixer          # controls audio input and output
 	ranger              # console file manager
 	redshift            # changes screen temperature
+	reflector           # update the /etc/pacman.d/mirrorlist with the best alternatives (ships with a systemd timer)
 	ripgrep             # rust's alternative to grep
 	rmlint              # removes duplicate files (useful for the wallpaper folder)
 	rofi                # application launcher (dmenu alternative)
