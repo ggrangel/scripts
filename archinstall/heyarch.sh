@@ -48,7 +48,7 @@ PACMAN_PACKAGES=(
 	slock               # screen locker
 	sxhkd               # setup system shortcuts
 	sxiv                # project archived. consider migrating to nsxiv later on
-	telegram-desktop    # life organizer
+	telegram-desktop    # jack-of-all-trades app
 	tldr                # community-driven manual pages
 	ttf-dejavu          # set of fonts
 	ttf-liberation      # set of fonts
