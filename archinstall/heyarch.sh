@@ -36,7 +36,6 @@ PACMAN_PACKAGES=(
 	openssh             # for ssh-keygen
 	pacman-contrib      # ships with the paccache.timer
 	pass                # standard unix password manager
-	pcmanfm             # GUI file manager: sometimes it is useful
 	picom               # standalone compositor for Xorg
 	pulsemixer          # controls audio input and output
 	ranger              # console file manager
@@ -45,7 +44,7 @@ PACMAN_PACKAGES=(
 	ripgrep             # rust's alternative to grep
 	rmlint              # removes duplicate files (useful for the wallpaper folder)
 	rofi                # application launcher (dmenu alternative)
-	slock               # screen locker
+	slock               # simple screen locker
 	sxhkd               # setup system shortcuts
 	sxiv                # project archived. consider migrating to nsxiv later on
 	telegram-desktop    # jack-of-all-trades app
@@ -65,7 +64,7 @@ PACMAN_PACKAGES=(
 	xorg-xinit          # allows user to manually start an Xorg display server
 	xorg-xkill          # forces the X server to close connections to client
 	xorg-xrandr         # used by the wallpapers scripts to count the number of connected monitors
-	xsel                # command line tool to copy to clipboard (tldr xsel to remember how to use it)
+	xsel                # command line tool to copy to clipboard
 	zathura             # document viewer
 	zathura-pdf-poppler # reads pdf in zathura
 	zoxide              # smarter cd (like z and autojump)
@@ -77,6 +76,7 @@ AUR_PACKAGES=(
 	bashmount           # command-line utility to easily manage removable media
 	brave-bin           # web browser
 	devour              # terminal swallower
+	dragon-drop         # simple drag-and-drop CLI for X or Wayland (replaces pcmanfm)
 	dtrx                # extract compressed files
 	insync              # sync local folder to google drive
 	nerd-fonts-complete # set of nerd fonts
@@ -94,6 +94,7 @@ install_pacman_packages() {
 
 install_paru() {
 	git clone https://aur.archlinux.org/paru.git "$HOME"/apps/paru
+	# shellcheck disable=2164
 	cd "$HOME"/apps/paru
 	makepkg -si
 }
