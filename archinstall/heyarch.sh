@@ -35,6 +35,7 @@ PACMAN_PACKAGES=(
 	noto-fonts          # set of fonts
 	openssh             # for ssh-keygen
 	pacman-contrib      # ships with the paccache.timer
+	pacutils            # run --unowened-files to list unneeded packages installed as dependencies
 	pass                # standard unix password manager
 	picom               # standalone compositor for Xorg
 	pulsemixer          # controls audio input and output
