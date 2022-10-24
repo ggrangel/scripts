@@ -35,11 +35,12 @@ archinstall
 ```
 
 Follow the interactive instructions. Non-obvious choices:
-1. Disk filesystem: ext4 (btrfs has better features, like the ability to take system' snapshots so we can recover them through GRUB. As I don't need it, I choose the most reliable one) 
-2. Encryption password: better set one for laptops
-3. Profile: xorg to install graphics drivers
-4. Audio: pulseaudio (the builtin audio system for linux is alsa, which is terrible to deal with. pipewire has better features, but I don't need them)
-5. Additional packages: networkmanager git
+1. Bootloader: systemd-bootlader (wheter you like it or not, systemd ships with a bootloader, so there's no need to install another one. GRUB is more reliable and has a better interface to navigate through boot options)
+2. Disk filesystem: ext4 (btrfs has better features, like the ability to take system' snapshots so we can recover them through GRUB. As I don't need it, I choose the most reliable one) 
+3. Encryption password: better set one for laptops
+4. Profile: xorg to install graphics drivers
+5. Audio: pulseaudio (the builtin audio system for linux is alsa, which is terrible to deal with. pipewire has better features, but I don't need them)
+6. Additional packages: networkmanager git
 
 After install, reboot without livemedia
   
