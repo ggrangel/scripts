@@ -5,8 +5,9 @@ setup_general_env() {
 		aws-cli
 		cargo # requiredy by mason.nvim
 		github-cli
-		luarocks # required by mason.nvim
-		npm      # required by some mason.nvim
+		git-delta # a syntax-highlighting pager for git (lazygit dependency)
+		luarocks  # required by mason.nvim
+		npm       # required by some mason.nvim
 		python-pip
 		tmux
 		wget # required by mason.nvim
