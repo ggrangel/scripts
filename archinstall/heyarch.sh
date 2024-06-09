@@ -73,7 +73,6 @@ PACMAN_PACKAGES=(
 )
 
 AUR_PACKAGES=(
-  autocutsel          # synchronizes PRIMARY and SELECTION clipboards
   bashmount           # command-line utility to easily manage removable media
   brave-bin           # web browser
   devour              # terminal swallower
