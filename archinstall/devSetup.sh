@@ -4,10 +4,11 @@ setup_general_env() {
 	pacmanPacks=(
 		aws-cli
 		cargo # requiredy by mason.nvim
+		docker
 		github-cli
 		go
 		luarocks # required by mason.nvim
-		npm      # required by some mason.nvim
+		npm      # required by mason.nvim
 		python-pip
 		ruby # required to install tmuxinator
 		tmux
