@@ -21,17 +21,18 @@
 # checks wether there is already an instance of the program with the same arguments
 # and only runs the program if there is none
 run() {
-    if ! pgrep -f "$1" ;
-    then
-        "$@"&
-    fi
+	if ! pgrep -f "$1"; then
+		"$@" &
+	fi
 }
 
 ~/scripts/remaps.sh &
 sxhkd -c ~/.config/sxhkd/sxhkdrc &
 python ~/scripts/wallpaper.py set &
-run picom --config ~/.config/picom.conf &
-redshift -P -O 5000 &
+run picom --config ~/.config/picom.conf & # picom is used for transparency and shadows
+redshift -P -O 5000 &                     # redshift is used to reduce blue light
+rm -rf "$XDG_RUNTIME_DIR/clipmenu*"       # remove old clipmenu entries
+clipmenud &
 run xautolock -time 60 -locker "systemctl suspend" &
 run volnoti &
 run telegram-desktop &
